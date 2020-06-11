@@ -1,0 +1,23 @@
+{
+    "name": "Burfa",
+    "short_name": "Burfa",
+    "description": "Investment in the future.",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "192x192",
+            "type": "image\/png"
+        },
+        {
+            "src": "favicon.png",
+            "sizes": "512x512",
+            "type": "image\/png"
+        }
+    ],
+    "background_color": "red",
+    "theme_color": "#D5E0EB",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/",
+    "scope": "/"
+}

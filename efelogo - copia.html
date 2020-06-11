@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>N O E N A S</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: #ccc;
+        text-align: center;
+    }
+    
+    p {
+        font-family: Arial, sans-serif;
+    }
+    
+    #template,
+    #path {
+        fill: none;
+    }
+    
+    #template {
+        stroke-width: 5px;
+        stroke: #444;
+    }
+    
+    #path {
+        stroke: #88CE02;
+        stroke-width: 5px;
+        visibility: hidden;
+    }
+    
+    #code,
+    #value {
+        font-size: 20px;
+        font-family: monospace;
+    }
+    
+    #code {
+        color: #777;
+        margin: 20px;
+        position: relative;
+        visibility: hidden;
+    }
+    
+    #current {
+        display: inline-block;
+        color: white;
+    }
+    
+    #description {
+        max-width: 530px;
+        color: #777;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        display: inline-block;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+    sad
+    <p>DrawSVGPlugin Values</p>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" viewBox="0 0 516.3 190" style="enable-background:new 0 0 516.3 211.99;" xml:space="preserve">
+      <path id="template" d="M5.3,97.9c0,0,10.8-24.2,29-37.8C51.7,47,73.2,75.3,79.9,75.3c19.7,0,32.8-22.9,44.2-13.1
+      c13.4,11.5,23.4,27.2,35.9,40.5c14,15,31.1,27.2,59.5,27.2c12.9,0,23.6-1.6,32.4-4.3c16.3-4.9,25.7-13.3,31.8-21.3
+      c8.3-10.9,9.5-21.1,9.5-21.1"/>
+        <path id="path" d="M32.9,87.5c0,0-2.5-36.4,26.6-45s38.9,24.8,39.6,33.1l28.1-2.3l-5.2-7.8l-0.7,7.3"/>
+    </svg>
+
+    <div id="code">drawSVG:
+        <div id="current">"100%"</div>
+    </div>
+    <button id="next" class="dark-grey-button club-demo-button" style="display:block; margin-bottom:20px;">Next Example</button>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/TextPlugin.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+
+
+
+
+
+        gsap.registerPlugin(DrawSVGPlugin, TextPlugin);
+
+        var values = "100%;40% 60%;20 350;50% 50%;true;0%".split(";"),
+            currentIndex = 0;
+
+        //set the initial value
+        gsap.set("#path", {
+            visibility: "visible"
+        });
+        gsap.set("#code", {
+            visibility: "visible"
+        });
+
+        function next() {
+
+            gsap.killTweensOf(next); //in case the user clicks, clear any delayed calls to this method. 
+            if (++currentIndex === values.length) {
+                currentIndex = 0;
+            }
+            if (values[currentIndex] === "true") {
+                gsap.set("#current", {
+                    text: (values[currentIndex]),
+                    ease: "none"
+                });
+            } else {
+                gsap.set("#current", {
+                    text: ('"' + values[currentIndex] + '"'),
+                    ease: "none"
+                });
+            }
+            gsap.to("#path", {
+                duration: 1,
+                drawSVG: values[currentIndex],
+                ease: "power1.inOut"
+            });
+
+        }
+
+
+        $("#next").click(next);
+
+    });
+</script>
+
+
+</html>
