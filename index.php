@@ -152,10 +152,10 @@
                                                 INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
                                             </h2>
                                             <div data-text>
-                                                <p style="font-size: 16px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing
+                                                <p style="font-size: 17px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing
                                                     needs of our companies</p>
 
-                                                <p style="font-size: 16px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency  to help create a society that protect and promotes quality of life and human dignity for all</p>
+                                                <p style="font-size: 17px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency  to help create a society that protect and promotes quality of life and human dignity for all</p>
 
                                             </div>
                                             <a href="#projects" class="ba-extra-text ba-scroll-link">
@@ -307,13 +307,13 @@
                                     <div class="row column">
 
                                         <div class="ba-offcanvas-contacts text-right" style="float: right;">
-                                            <p class="mb-3" style="font-weight: 700;font-size: 16px;">Headquarter</p>
-                                            <p style="margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
-                                            <p class="mb-3">Quebec, Canada, H3C 5M1</p>	
-                                            <p class="mb-3">
+                                            <p class="mb-3" style="font-weight: 700;font-size: 20px;">Headquarter</p>
+                                            <p style="font-size: 17px; margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
+                                            <p style="font-size: 17px;" class="mb-3">Quebec, Canada, H3C 5M1</p>	
+                                            <p style="font-size: 17px;" class="mb-3">
                                               <a href="tel:+1 514 962 0493">+1 514 962 0493</a>
                                             </p>
-                                            <p>
+                                            <p style="font-size: 17px;">
                                               <a href="mailto:info@noenas.com">info@noenas.com</a>
                                             </p>
                                          
