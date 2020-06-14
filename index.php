@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>n o e n a s</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.css">
+    <link rel="stylesheet" href="assets/animate.compat.css">
     <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' />
     <link rel='stylesheet' href='app.css?<?php echo rand(10, 99); ?>' type='text/css' />
     <link rel="icon" href="favicon.ico" />
@@ -78,7 +78,13 @@
 
 
 
-    </style>
+
+    
+  
+
+</style>
+
+
 
     <script>
         if (
@@ -97,6 +103,12 @@
 
 
 </head>
+
+
+
+
+
+<?php include "logo.php"; ?>
 
 
 
@@ -419,13 +431,19 @@
     <script defer src="three.min.js"></script>
     <script src="TweenMax.min.js"></script>
     <script src="ScrollToPlugin.min.js"></script>
-    <script type='text/javascript' src='jquery.min.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script type='text/javascript' src='ScrollMagic.min.js'></script>
     <script type='text/javascript' src='animation.gsap.js'></script>
     <script type='text/javascript' src='pwaforwp.min.js?ver=1.7.7'></script>
     <script type='text/javascript' src='thickbox.js'></script>
     <script type='text/javascript' src='popper.min.js'></script>
     <script type='text/javascript' src='bootstrap/js/bootstrap.min.js'></script>
+
+
+
+
+
+
     <script>
     
     function irMapa(){
