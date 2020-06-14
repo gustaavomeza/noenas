@@ -1,5 +1,7 @@
 <style>
-
+    body {
+        cursor:pointer;
+    }
     #sopes {
         fill: #FFFFFF;
     }
@@ -27,7 +29,17 @@
         visibility: hidden;
     }
 
+    svg {
+        position: absolute;
+        width: 50px;
+        left: 4px;
+        top: 6px;
+    }
+
 </style>
+
+
+    <img src="noenaslogo2.svg" alt="Noenas" style="height:30px">
 
 
     <svg width="300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-10 5 115 75" style="enable-background:new 0 0 96.4 83.7;" xml:space="preserve">
@@ -78,21 +90,13 @@
 
 
 
-
-
-
-
-
-
-
       <path id="template"  d="M75.3,31c2.9,4.9,2.9,11.2,2.9,12.4c0,16.9-14.2,30-30.5,30.4C38.5,73.9,29,69,23.3,62.8L3.2,73.7l9.2,1.1
     l-2.6-5"/>
     <path id="path2"  d="M75.3,31c2.9,4.9,2.9,11.2,2.9,12.4c0,16.9-14.2,30-30.5,30.4C38.5,73.9,29,69,23.3,62.8L3.2,73.7l9.2,1.1
 	l-2.6-5"/>
     </svg>
 
-    <button id="next" class="dark-grey-button club-demo-button" style="display:block; margin-bottom:20px;">Next Example</button>
-
+  
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -142,7 +146,7 @@
                 ease: "power1.inOut"
             });
         }
-        $("#next")
+        $("body")
             .mouseenter(function() {
                 next();
             })

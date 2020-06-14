@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>n o e n a s</title>
-    
+
     <link rel="stylesheet" href="assets/animate.compat.css">
     <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' />
     <link rel='stylesheet' href='app.css?<?php echo rand(10, 99); ?>' type='text/css' />
@@ -51,38 +51,32 @@
         }
         
         .ba-mmap {
-           /*  z-index: 200; */
+            /*  z-index: 200; */
         }
         
         .st3 {
             cursor: pointer;
             fill: #fff;
         }
-
+        
         #contact-inner {
             overflow: hidden;
         }
-
+        
         #contact-inner>.ba-section-title-line-wrap {
             height: 100% !important;
             overflow: hidden;
         }
+        
         #contact-inner>.ba-section-title-line-wrap>div {
             height: 100% !important;
             overflow: hidden;
         }
-
+        
         .nocolor {
             color: transparent !important;
         }
-
-
-
-
-    
-  
-
-</style>
+    </style>
 
 
 
@@ -108,9 +102,7 @@
 
 
 
-<?php 
-//include "logo.php"; 
-?>
+
 
 
 
@@ -129,7 +121,7 @@
                         <div class="ba-header-bar">
                             <a href="#home" class="ba-extra-text ba-explore-dark" style="opacity: 0;width: 0px;" data-for-people data-anchor="home"></a>
                             <a class="ba-logo" href="#home" rel="home" title="Noenas">
-                                <img src="noenaslogo.svg" alt="Noenas" style="height:30px" />
+                                <iframe src="logo.php" width="190px" height="47" style="border:none;" id='iframe_id'></iframe>
                             </a>
                             <ul class="miidiomas">
                                 <li class="nav-item ido mr-2">
@@ -169,7 +161,7 @@
                                                 <p style="font-size: 17px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing
                                                     needs of our companies</p>
 
-                                                <p style="font-size: 17px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency  to help create a society that protect and promotes quality of life and human dignity for all</p>
+                                                <p style="font-size: 17px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency to help create a society that protect and promotes quality of life and human dignity for all</p>
 
                                             </div>
                                             <a href="#projects" class="ba-extra-text ba-scroll-link">
@@ -323,15 +315,15 @@
                                         <div class="ba-offcanvas-contacts text-right" style="float: right;">
                                             <p class="mb-3" style="font-weight: 700;font-size: 20px;">Headquarter</p>
                                             <p style="font-size: 17px; margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
-                                            <p style="font-size: 17px;" class="mb-3">Quebec, Canada, H3C 5M1</p>	
+                                            <p style="font-size: 17px;" class="mb-3">Quebec, Canada, H3C 5M1</p>
                                             <p style="font-size: 17px;" class="mb-3">
-                                              <a href="tel:+1 514 962 0493">+1 514 962 0493</a>
+                                                <a href="tel:+1 514 962 0493">+1 514 962 0493</a>
                                             </p>
                                             <p style="font-size: 17px;">
-                                              <a href="mailto:info@noenas.com">info@noenas.com</a>
+                                                <a href="mailto:info@noenas.com">info@noenas.com</a>
                                             </p>
-                                         
-                                    
+
+
                                         </div>
 
                                     </div>
@@ -342,9 +334,9 @@
 
 
                                 <?php require_once('mapa.php'); ?>
-                           
 
-                                
+
+
                             </div>
                             <div class="ba-contact-slider" data-contact-slider data-scroll-reveal></div>
                             <div class="row" data-scroll-reveal data-scroll-trigger="0.8"></div>
@@ -428,7 +420,9 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-    <script>new WOW().init();</script>
+    <script>
+        new WOW().init();
+    </script>
 
     <script defer src="three.min.js"></script>
     <script src="TweenMax.min.js"></script>
@@ -447,23 +441,26 @@
 
 
     <script>
-    
-    function irMapa(){
-        var url = "https://www.google.com/maps/place/20+Rue+des+Soeurs+Grises,+Montr%C3%A9al,+QC+H3C+5M1,+Canad%C3%A1/@45.4984018,-73.5529588,17z/data=!4m5!3m4!1s0x4cc91af5e668fe83:0x80034759d1b5f82d!8m2!3d45.4981837!4d-73.5535274";
-            window.open(url, "_blank");
-    }
+        document.getElementById("iframe_id").contentWindow.document.body.onclick = function() {
+            alert("iframe clicked");
 
-    var three = document.createElement("script");
-    var app = document.createElement("script");
-    TweenMax.to('[data-loader-logo]', 0, {
-        opacity: 1,
-        onComplete: function() {
-            three.src = "three.min.js";
-            app.src = "app.js?<?php echo rand(10, 99); ?>";
-            document.body.appendChild(app);
         }
-    })
 
+        function irMapa() {
+            var url = "https://www.google.com/maps/place/20+Rue+des+Soeurs+Grises,+Montr%C3%A9al,+QC+H3C+5M1,+Canad%C3%A1/@45.4984018,-73.5529588,17z/data=!4m5!3m4!1s0x4cc91af5e668fe83:0x80034759d1b5f82d!8m2!3d45.4981837!4d-73.5535274";
+            window.open(url, "_blank");
+        }
+
+        var three = document.createElement("script");
+        var app = document.createElement("script");
+        TweenMax.to('[data-loader-logo]', 0, {
+            opacity: 1,
+            onComplete: function() {
+                three.src = "three.min.js";
+                app.src = "app.js?<?php echo rand(10, 99); ?>";
+                document.body.appendChild(app);
+            }
+        })
     </script>
 </body>
 
