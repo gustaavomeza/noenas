@@ -108,7 +108,9 @@
 
 
 
-<?php include "logo.php"; ?>
+<?php 
+//include "logo.php"; 
+?>
 
 
 
