@@ -441,10 +441,6 @@
 
 
     <script>
-        document.getElementById("iframe_id").contentWindow.document.body.onclick = function() {
-            window.location = "#home";
-        }
-
         function irMapa() {
             var url = "https://www.google.com/maps/place/20+Rue+des+Soeurs+Grises,+Montr%C3%A9al,+QC+H3C+5M1,+Canad%C3%A1/@45.4984018,-73.5529588,17z/data=!4m5!3m4!1s0x4cc91af5e668fe83:0x80034759d1b5f82d!8m2!3d45.4981837!4d-73.5535274";
             window.open(url, "_blank");
@@ -460,6 +456,29 @@
                 document.body.appendChild(app);
             }
         })
+
+        //$('#iframe_id').on('click', function(event) {
+        //    alert(1);
+        //    //window.location="#home";
+
+        //});
+
+
+        $(document).ready(function() {
+            $("iframe").each(function() {
+                //Using closures to capture each one
+                var iframe = $(this);
+                iframe.on("load", function() { //Make sure it is fully loaded
+                    iframe.contents().click(function(event) {
+                        iframe.trigger("click");
+                    });
+                });
+
+                iframe.click(function() {
+                    //alert(1);
+                });
+            });
+        });
     </script>
 </body>
 
