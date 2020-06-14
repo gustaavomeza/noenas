@@ -120,7 +120,7 @@
                     <div class="row column">
                         <div class="ba-header-bar">
                             <a href="#home" class="ba-extra-text ba-explore-dark" style="opacity: 0;width: 0px;" data-for-people data-anchor="home"></a>
-                            <a class="ba-logo" href="#home" rel="home" title="Noenas">
+                            <a class="ba-logo" id=myCheck href="#home" rel="home" title="Noenas">
                                 <iframe src="logo.php" width="190px" height="47" style="border:none;" id='iframe_id'></iframe>
                             </a>
                             <ul class="miidiomas">
@@ -442,8 +442,7 @@
 
     <script>
         document.getElementById("iframe_id").contentWindow.document.body.onclick = function() {
-            alert("iframe clicked");
-
+            window.location = "#home";
         }
 
         function irMapa() {
