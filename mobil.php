@@ -89,7 +89,7 @@
                                     <a class="nav-link smoth-scroll active" href="#">ENGLISH</a>
                                 </li>
                                 <li class="nav-item ido">
-                                    <a class="nav-link smoth-scroll" href="#">FRANÇAIS</a>
+                                    <a class="nav-link smoth-scroll" href="fr">FRANÇAIS</a>
                                 </li>
                             </ul>
                         </div>
