@@ -6477,9 +6477,9 @@ screen and (min-width:56.25em) {
 
 .ba-loader {
     background-color: #000000;
-    background-image: url('assets/img/lod1.jpg');
+    background-image: url('assets/img/pred.gif');
     background-repeat: no-repeat, repeat;
-    background-size: 350px auto;
+    background-size: 80px auto;
     background-position: center;
 }
 
