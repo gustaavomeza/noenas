@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>n o e n a s</title>
+    <title>noenas</title>
 
     <link rel="stylesheet" href="assets/animate.compat.css">
-    <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' />
     <link rel='stylesheet' href='app.css?<?php echo rand(10, 99); ?>' type='text/css' />
     <link rel="icon" href="favicon.ico" />
 
@@ -26,7 +25,39 @@
         .miidiomas>li {
             display: inline-block;
         }
+
+        #ex5 {
+            height: 25px;
+            position: relative;
+            top: 3.8px;
+            left: -195px;
+        }
         
+        #ex4 {
+            height: 25px;
+            position: relative;
+            top: -3.3px;
+            left: -152.5px;
+        }
+
+        #ex5 path {
+            fill: none;
+            stroke: #002dff;
+            stroke-width: 6px;
+            stroke-dasharray: 720;
+            stroke-dashoffset: 720;
+            transition: stroke-dashoffset 1s linear;
+        }
+
+        #ex4 path {
+            fill: none;
+            stroke: #00cf00;
+            stroke-width: 6px;
+            stroke-dasharray: 720;
+            stroke-dashoffset: 720;
+            transition: stroke-dashoffset 1s linear;
+        }
+      
         .ido {
             text-transform: uppercase;
             margin: 0px;
@@ -75,6 +106,8 @@
         
         .nocolor {
             color: transparent !important;
+            height: 0px !important;
+            margin: 0px !important;
         }
     </style>
 
@@ -120,8 +153,25 @@
                     <div class="row column">
                         <div class="ba-header-bar">
                             <a href="#home" class="ba-extra-text ba-explore-dark" style="opacity: 0;width: 0px;" data-for-people data-anchor="home"></a>
-                            <a class="ba-logo" id=myCheck href="#home" rel="home" title="Noenas">
-                                <iframe src="logo.php" width="190px" height="47" style="border:none;" id='iframe_id'></iframe>
+                            <a class="ba-logo" href="#home" rel="home" title="Noenas">
+                                <img src="noenaslogo.svg" alt="Noenas" style="height:26px" />
+
+
+
+<svg version="1.1" id="ex4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 76.3 51" style="enable-background:new 0 0 76.3 51;" xml:space="preserve">
+<path id="path2" d="M12,42c-2.2-3.7-2.2-8.5-2.2-9.4c0-12.8,10.7-22.6,23-22.9C39.8,9.7,47,13.4,51.3,18l15.2-8.2L59.5,9l2,3.8"/>
+</svg>
+<svg version="1.1" id="ex5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 76.3 51" style="enable-background:new 0 0 76.3 51;" xml:space="preserve">
+<path id="path2" d="M64.3,9c2.2,3.7,2.2,8.5,2.2,9.4c0,12.8-10.7,22.6-23,22.9C36.5,41.3,29.3,37.7,25,33L9.8,41.2l6.9,0.8l-2-3.8"
+	/>
+</svg>
+
+
+
+
+                                
                             </a>
                             <ul class="miidiomas">
                                 <li class="nav-item ido mr-2">
@@ -158,13 +208,12 @@
                                                 INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
                                             </h2>
                                             <div data-text>
-                                                <p style="font-size: 17px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing
-                                                    needs of our companies</p>
+                                                <p style="font-size: 17px;">We are a multi-subsidiary company with diversified participation in different business sectors. We execute all the relevant financing activities that our companies need.</p>
 
-                                                <p style="font-size: 17px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency to help create a society that protect and promotes quality of life and human dignity for all</p>
+                                                <p style="font-size: 17px;">Our guiding principles are based on Ethical Finance principles such as transparency, accountability and efficiency, in order to help create a society that protects and promotes the quality of life and human dignity for all.</p>
 
                                             </div>
-                                            <a href="#projects" class="ba-extra-text ba-scroll-link">
+                                            <a href="#industries" class="ba-extra-text ba-scroll-link">
                                                 <span data-scroll>
                                                     SCROLL
                                                 </span>
@@ -187,8 +236,8 @@
 
 
                     <!--  LISTA MENU   -->
-                    <section class="section fp-section-projects" data-anchor="projects" data-section="projects">
-                        <div class="ba-section ba-section-projects">
+                    <section class="section fp-section-industries" data-anchor="industries" data-section="industries">
+                        <div class="ba-section ba-section-industries">
                             <div class="ba-section-body">
                                 <div class="row">
                                     <div class="column medium-12 large-6 small-12 position-relative" data-box>
@@ -197,47 +246,18 @@
 
 
 
-                                            <div class="ba-projects-slider show-for-large" data-projects-slider>
-
-
-
-
-                                                <div>
-                                                    <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
-                                                    <div class="ba-section-text" data-text>
-                                                        <p class="nocolor">xxx</p>
-                                                    </div>
-                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll style="padding-top: 330px;">
-                                                        <span data-scroll>
-                                                            SCROLL
-                                                        </span>
-                                                    </a>
-                                                </div>
-
-
-
+                                            <div class="ba-industries-slider show-for-large" data-industries-slider>
 
 
                                                 <div>
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
-                                                        <p class="nocolor">xxx</p>
+                                                        <span style="display: block;height: 150px;"></span>
+                                                        <strong style="font-size: 40px;">INDUSTRIES</strong>
+                                                        <span style="display: block;height: 319px;"></span>
+                                            
                                                     </div>
-                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll style="padding-top: 330px;">
-                                                        <span data-scroll>
-                                                            SCROLL
-                                                        </span>
-                                                    </a>
-                                                </div>
-
-
-
-                                                <div>
-                                                    <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
-                                                    <div class="ba-section-text" data-text>
-                                                        <p class="nocolor">xxx</p>
-                                                    </div>
-                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll style="padding-top: 330px;">
+                                                    <a href="#contact" class="ba-extra-text ba-scroll-link">
                                                         <span data-scroll>
                                                             SCROLL
                                                         </span>
@@ -247,9 +267,55 @@
                                                 <div>
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
-                                                        <p class="nocolor">xxx</p>
+                                                        <span style="display: block;height: 150px;"></span>
+                                                        <p style="font-size: 17px;height: 350px;">A full-service provider of custom uniforms and apparel for corporate and law enforcement agencies.</p>
+                                                        
                                                     </div>
-                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll style="padding-top: 330px;">
+                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
+                                                        <span data-scroll>
+                                                            SCROLL
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+
+                                                <div>
+                                                    <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
+                                                    <div class="ba-section-text" data-text>
+                                                        <span style="display: block;height: 150px;"></span>
+                                                        <p style="font-size: 17px;height: 350px;">A grower, producer and supplier specialized in a wide range of high-quality fresh produce.</p>
+                                                       
+                                                    </div>
+                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
+                                                        <span data-scroll>
+                                                            SCROLL
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+
+                                                <div>
+                                                    <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
+                                                    <div class="ba-section-text" data-text>
+                                                        <span style="display: block;height: 150px;"></span>
+                                                        <p style="font-size: 17px;height: 350px;">An online end-to-end platform that generates data intelligence which predicts, identifies and addresses pain points and root causes of production and quality failures.</p>
+                                                   
+                                                    </div>
+                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
+                                                        <span data-scroll>
+                                                            SCROLL
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+                                                <div>
+                                                    <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
+                                                    <div class="ba-section-text" data-text>
+                                                        <span style="display: block;height: 150px;"></span>
+                                                        <p style="font-size: 17px;height: 350px;">A developer, owner and operator of worldwide prime real estate locations.</p>
+                                                   
+                                                    </div>
+                                                    <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
                                                         <span data-scroll>
                                                             SCROLL
                                                         </span>
@@ -313,7 +379,7 @@
                                     <div class="row column">
 
                                         <div class="ba-offcanvas-contacts text-right" style="float: right;">
-                                            <p class="mb-3" style="font-weight: 700;font-size: 20px;">Headquarter</p>
+                                            <p class="mb-3" style="font-weight: 700;font-size: 20px;">Headquarters</p>
                                             <p style="font-size: 17px; margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
                                             <p style="font-size: 17px;" class="mb-3">Quebec, Canada, H3C 5M1</p>
                                             <p style="font-size: 17px;" class="mb-3">
@@ -347,36 +413,44 @@
                     <div class="ba-loader-bg" data-loader-bg></div>
 
 
-                    <div class="ba-projects-bar ba-projects-bar--desk show-for-large">
-                        <div class="ba-projects-bar-wrap" data-projects-scroll-wrap>
-                            <div class="ba-projects-bar-wrap__fade ba-projects-bar-wrap__fade--top" data-projects-scroll-fade></div>
-                            <div data-projects-scroll-list>
-                                <ul class="ba-projects-list" data-projects-list>
-                                    <li class="ba-project" data-projects-list-item>
+                    <div class="ba-industries-bar ba-industries-bar--desk show-for-large">
+                        <div class="ba-industries-bar-wrap" data-industries-scroll-wrap>
+                            <div class="ba-industries-bar-wrap__fade ba-industries-bar-wrap__fade--top" data-industries-scroll-fade></div>
+                            <div data-industries-scroll-list>
+                                <ul class="ba-industries-list" data-industries-list>
+
+
+
+
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            TEXTILES
+                                            TEXTIL
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
-                                    <li class="ba-project" data-projects-list-item>
+
+
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            TECH
+                                           FOOD
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
-                                    <li class="ba-project" data-projects-list-item>
+
+                                    
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            FOOD
+                                           TECHNOLOGY
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
-                                    <li class="ba-project" data-projects-list-item>
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
                                             REAL ESTATE
@@ -386,10 +460,11 @@
                                     </li>
 
 
+
                                 </ul>
 
                             </div>
-                            <div class="ba-projects-bar-wrap__fade ba-projects-bar-wrap__fade--bot" data-projects-scroll-fade></div>
+                            <div class="ba-industries-bar-wrap__fade ba-industries-bar-wrap__fade--bot" data-industries-scroll-fade></div>
                         </div>
                     </div>
                 </main>
@@ -419,7 +494,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="wow.js"></script>
     <script>
         new WOW().init();
     </script>
@@ -427,13 +502,10 @@
     <script defer src="three.min.js"></script>
     <script src="TweenMax.min.js"></script>
     <script src="ScrollToPlugin.min.js"></script>
-    <script type='text/javascript' src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script type='text/javascript' src='jquery-2.2.4.min.js'></script>
     <script type='text/javascript' src='ScrollMagic.min.js'></script>
     <script type='text/javascript' src='animation.gsap.js'></script>
-    <script type='text/javascript' src='pwaforwp.min.js?ver=1.7.7'></script>
-    <script type='text/javascript' src='thickbox.js'></script>
-    <script type='text/javascript' src='popper.min.js'></script>
-    <script type='text/javascript' src='bootstrap/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='thickbox.js?<?php echo rand(10, 99); ?>'></script>
 
 
 
@@ -446,39 +518,31 @@
             window.open(url, "_blank");
         }
 
-        var three = document.createElement("script");
+        var THREE = document.createElement("script");
         var app = document.createElement("script");
         TweenMax.to('[data-loader-logo]', 0, {
             opacity: 1,
             onComplete: function() {
-                three.src = "three.min.js";
+                THREE.src = "three.min.js";
                 app.src = "app.js?<?php echo rand(10, 99); ?>";
                 document.body.appendChild(app);
             }
         })
 
-        //$('#iframe_id').on('click', function(event) {
-        //    alert(1);
-        //    //window.location="#home";
 
-        //});
-
-
-        $(document).ready(function() {
-            $("iframe").each(function() {
-                //Using closures to capture each one
-                var iframe = $(this);
-                iframe.on("load", function() { //Make sure it is fully loaded
-                    iframe.contents().click(function(event) {
-                        iframe.trigger("click");
-                    });
-                });
-
-                iframe.click(function() {
-                    //alert(1);
-                });
-            });
+        
+        $(function() {
+            $('.ba-logo').hover(
+                function() {
+                    $("path").css('stroke-dashoffset', '0');
+                },
+                function() {
+                    $("path").css('stroke-dashoffset', '720');
+                }
+            );
         });
+
+
     </script>
 </body>
 

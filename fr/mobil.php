@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>n o e n a s</title>
+    <title>noenas</title>
     <link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' />
     <link rel='stylesheet' href='appmobil.css?<?php echo rand(10, 99); ?>' type='text/css' />
     <link rel="icon" href="favicon.ico" />
@@ -62,6 +62,72 @@
             cursor: pointer;
             fill: #fff;
         }
+
+
+        .btng {
+    background: #313131;
+    margin: 0px !important;
+    color: white;
+    padding: 2px 10px !important;
+    font-weight: 100;
+    border: solid 2px white;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #313131;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #000000;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+.modal-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #000000;
+}
+
+
+#textitle{
+    line-height: 20px;
+}
+
     </style>
 </head>
 
@@ -86,7 +152,7 @@
                             </a>
                             <ul class="miidiomas">
                                 <li class="nav-item ido mr-2">
-                                    <a class="nav-link smoth-scroll" href="../">ENGLISH</a>
+                                    <a class="nav-link smoth-scroll" href="../mobil.php">ENGLISH</a>
                                 </li>
                                 <li class="nav-item ido">
                                     <a class="nav-link smoth-scroll active" href="#">FRANÇAIS</a>
@@ -113,7 +179,7 @@
 
 
                 <ul class="ba-projects-list">
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-easing="ease-in-sine">
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-easing="ease-in-sine" onclick="abremodal(1)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-t ext">
                                             TEXTILES
@@ -121,7 +187,7 @@
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine">
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine" onclick="abremodal(2)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
                                             TECH
@@ -129,7 +195,7 @@
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="150" data-aos-easing="ease-in-sine">
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="150" data-aos-easing="ease-in-sine" onclick="abremodal(3)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
                                             FOOD
@@ -137,7 +203,7 @@
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200" data-aos-easing="ease-in-sine">
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200" data-aos-easing="ease-in-sine" onclick="abremodal(4)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
                                             REAL ESTATE
@@ -146,9 +212,29 @@
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
 
-
                 </ul><br><br><br><br><br><br>
-
+                
+                
+                <!-- Modal -->
+                <div class="modal fade m-5" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modtitle">?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h3 id="textitle">. . .</h3>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btng" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
 
 
                 <div class="ba-section-body">
@@ -156,8 +242,8 @@
 
                         <div class="ba-offcanvas-contacts text-right" style="float: right;">
                             <p class="mb-3" style="font-weight: 700;font-size: 16px;">Siège social</p>
-                            <p style="margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
-                            <p class="mb-3">Quebec, Canada, H3C 5M1</p>
+                            <p style="margin-bottom: -6px;">20 des Souers Grises, Montréal,</p>
+                            <p class="mb-3">Québec, Canada, H3C 5M1</p>
                             <p class="mb-3">
                                 <a href="tel:+1 514 962 0493">+1 514 962 0493</a>
                             </p>
@@ -190,7 +276,32 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+    <script>
 
+
+        function abremodal(num){
+
+            if(num==1){
+                $("#modtitle").html("TEXTILES");
+                $("#textitle").html("An innovative safety baby’s clothing manufacturer");
+            }
+            if(num==2){
+                $("#modtitle").html("TECH");
+                $("#textitle").html("An online end-to-end platform that brings accuracy, visibility and intelligence of quality and production data which predictive, identify, address hotspots and root cause of a failure");
+            }
+
+            if(num==3){
+                $("#modtitle").html("FOOD");
+                $("#textitle").html("A grower-partner, producer-partner, and supplier, specialises in a very wide range of high-quality Fresh vegetables and fruit products");
+            }
+            if(num==4){
+                $("#modtitle").html("REAL ESTATE");
+                $("#textitle").html("A real-estate developer, owner and operator, with a portfolio of high-end assets in worldwide prime locations");
+            }
+
+            $("#exampleModal").modal("show");
+
+        }
         AOS.init();
 
         function irMapa() {

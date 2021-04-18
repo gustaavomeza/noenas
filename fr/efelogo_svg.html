@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            background: #fff;
+        }
+        
+        #ex5 path {
+            fill: none;
+            stroke: black;
+            stroke-width: 8px;
+            stroke-dasharray: 720;
+            stroke-dashoffset: 720;
+            transition: stroke-dashoffset 1s linear;
+        }
+        /* #ex5:hover path {
+            stroke-dashoffset: 720;
+        } */
+    </style>
+
+
+    <svg id="ex5" xmlns="http://www.w3.org/2000/svg" viewBox="100 200 1080 240">
+
+    <path d="M181,266c6.259324284800016,-144.79776015789997,168.7597092008,201.2022217284,314,44c62.24029079920001,-146.2022217284,184.76732259510004,81.35544128800001,272,-72"/>
+    </svg>
+
+
+
+    <button>CLIVKE</button>
+
+
+
+
+
+
+</body>
+
+</html>
+
+<script type='text/javascript' src='jquery-2.2.4.min.js'></script>
+<script>
+    $(function() {
+
+
+
+
+        $('button').hover(
+            function() {
+
+                $("path").css('stroke-dashoffset', '0');
+
+
+
+            },
+            function() {
+                $("path").css('stroke-dashoffset', '720');
+
+            }
+        );
+
+        /* 
+                $('.svg-containment-system').hover(
+                    function() {
+                        $(this).children('.draw-me').children('path').each(function() {
+                            var path = this;
+                            var pathLength = path.getTotalLength();
+                            $(this).css('stroke-dasharray', pathLength);
+                            $(this).css('stroke-dashoffset', pathLength);
+                            $(path).css('stroke', '#eee');
+
+                            function whiteOut() {
+
+                                $(path).css('stroke-dashoffset', 0);
+                            }
+                            setTimeout(function() {
+                                whiteOut();
+                            }, 500);
+                        });
+                    },
+                    function() {
+                        $(this).children('.draw-me').children('path').each(function() {
+                            var path = this;
+                            var pathLength = path.getTotalLength();
+                            $(this).css('stroke-dasharray', pathLength);
+                            $(this).css('stroke-dashoffset', pathLength);
+
+                            function whiteIn() {
+                                $(path).css('stroke', '#000000');
+                                $(path).css('stroke-dashoffset', 0);
+                            }
+                            setTimeout(function() {
+                                whiteIn();
+                            }, 500);
+                        });
+                    }
+                );
+
+
+
+                      $('.draw-me').children('path').each(function() {
+                            var path = this;
+                            // Get the length of each path	
+                            var pathLength = path.getTotalLength();
+                            $(this).css('stroke-dasharray', pathLength);
+                            $(this).css('stroke-dashoffset', 0);
+                        }); 
+
+
+
+
+         */
+
+
+    });
+</script>

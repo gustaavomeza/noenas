@@ -192,39 +192,8 @@
         var t = a[e.which || e.keyCode] || String.fromCharCode(e.which).toUpperCase();
         return t = t.replace(/\W+/, ""), e.shiftKey && (t = "SHIFT_" + t), e.ctrlKey && (t = "CTRL_" + t), e.altKey && (t = "ALT_" + t), t = t.replace(/_$/, "")
     }
-    var u = {
-        keys: function(e) {
-            var t = {};
-            for (var i in e) t[e[i]] = e[i];
-            return t
-        }(a),
-        parseKey: d,
-        handleKey: function(e, t, i) {
-            var o, n = l[t],
-                a = this.parseKey(e);
-            if (!n) return console.warn("Component not defined!");
-            if ((o = i[(void 0 === n.ltr ? n : (0, r.rtl)() ? s.default.extend({}, n.ltr, n.rtl) : s.default.extend({}, n.rtl, n.ltr))[a]]) && "function" == typeof o) {
-                var c = o.apply();
-                (i.handled || "function" == typeof i.handled) && i.handled(c)
-            } else(i.unhandled || "function" == typeof i.unhandled) && i.unhandled()
-        },
-        findFocusable: c,
-        register: function(e, t) {
-            l[e] = t
-        },
-        trapFocus: function(e) {
-            var t = c(e),
-                i = t.eq(0),
-                o = t.eq(-1);
-            e.on("keydown.zf.trapfocus", (function(e) {
-                e.target === o[0] && "TAB" === d(e) ? (e.preventDefault(), i.focus()) : e.target === i[0] && "SHIFT_TAB" === d(e) && (e.preventDefault(), o.focus())
-            }))
-        },
-        releaseFocus: function(e) {
-            e.off("keydown.zf.trapfocus")
-        }
-    };
-    t.Keyboard = u
+
+    t.Keyboard = {};
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -272,10 +241,9 @@
 
     d.Initializers.addSimpleListeners = function() {
         var e = (0, r.default)(document);
-        d.Initializers.addOpenListener(e), d.Initializers.addCloseListener(e), d.Initializers.addToggleListener(e), d.Initializers.addCloseableListener(e), d.Initializers.addToggleFocusListener(e)
     }, d.Initializers.addGlobalListeners = function() {
         var e = (0, r.default)(document);
-        d.Initializers.addMutationEventsListener(e), d.Initializers.addResizeListener(), d.Initializers.addScrollListener(), d.Initializers.addClosemeListener()
+
     }, d.init = function(e, t) {
         if (void 0 === e.triggersInitialized) {
             e(document);
@@ -299,9 +267,8 @@
             default: e
         }
     }
-    window.$ = $, $(document).foundation(), o.front.init(), o.about.init(), n.default.init(), n.default.play(), $("[data-main-menu] a, .off-canvas .ba-logo").on("click", (function() {
-        $(".off-canvas").foundation("close")
-    }))
+    window.$ = $, $(document).foundation(), o.front.init(), o.about.init(), n.default.init(), n.default.play();
+
 }, function(e, t, i) {
     /**
      * what-input - A global utility for tracking the current input method (mouse, keyboard or touch).
@@ -310,127 +277,8 @@
      * @license MIT
      */
     var o;
-    o = function() {
-        return function(e) {
-            var t = {};
+    o = {}, e.exports = o;
 
-            function i(o) {
-                if (t[o]) return t[o].exports;
-                var n = t[o] = {
-                    exports: {},
-                    id: o,
-                    loaded: !1
-                };
-                return e[o].call(n.exports, n, n.exports, i), n.loaded = !0, n.exports
-            }
-            return i.m = e, i.c = t, i.p = "", i(0)
-        }([function(e, t) {
-            "use strict";
-            e.exports = function() {
-                var e = "initial",
-                    t = null,
-                    i = document.documentElement,
-                    o = ["input", "select", "textarea"],
-                    n = [],
-                    s = [16, 17, 18, 91, 93],
-                    r = [9],
-                    a = {
-                        keydown: "keyboard",
-                        keyup: "keyboard",
-                        mousedown: "mouse",
-                        mousemove: "mouse",
-                        MSPointerDown: "pointer",
-                        MSPointerMove: "pointer",
-                        pointerdown: "pointer",
-                        pointermove: "pointer",
-                        touchstart: "touch"
-                    },
-                    l = [],
-                    c = !1,
-                    d = !1,
-                    u = {
-                        x: null,
-                        y: null
-                    },
-                    h = {
-                        2: "touch",
-                        3: "touch",
-                        4: "mouse"
-                    },
-                    p = !1;
-                try {
-                    var f = Object.defineProperty({}, "passive", {
-                        get: function() {
-                            p = !0
-                        }
-                    });
-                    window.addEventListener("test", null, f)
-                } catch (e) {}
-                var v = function() {
-                        var e = !!p && {
-                            passive: !0
-                        };
-                        window.PointerEvent ? (i.addEventListener("pointerdown", m), i.addEventListener("pointermove", w)) : window.MSPointerEvent ? (i.addEventListener("MSPointerDown", m), i.addEventListener("MSPointerMove", w)) : (i.addEventListener("mousedown", m), i.addEventListener("mousemove", w), "ontouchstart" in window && (i.addEventListener("touchstart", y, e), i.addEventListener("touchend", y))), i.addEventListener(b(), w, e), i.addEventListener("keydown", m), i.addEventListener("keyup", m)
-                    },
-                    m = function(i) {
-                        if (!c) {
-                            var n = i.which,
-                                l = a[i.type];
-                            if ("pointer" === l && (l = S(i)), e !== l || t !== l) {
-                                var d = document.activeElement,
-                                    u = !1;
-                                (d && d.nodeName && -1 === o.indexOf(d.nodeName.toLowerCase()) || -1 !== r.indexOf(n)) && (u = !0), ("touch" === l || "mouse" === l || "keyboard" === l && n && u && -1 === s.indexOf(n)) && (e = t = l, g())
-                            }
-                        }
-                    },
-                    g = function() {
-                        i.setAttribute("data-whatinput", e), i.setAttribute("data-whatintent", e), -1 === l.indexOf(e) && (l.push(e), i.className += " whatinput-types-" + e), T("input")
-                    },
-                    w = function(e) {
-                        if (u.x !== e.screenX || u.y !== e.screenY ? (d = !1, u.x = e.screenX, u.y = e.screenY) : d = !0, !c && !d) {
-                            var o = a[e.type];
-                            "pointer" === o && (o = S(e)), t !== o && (t = o, i.setAttribute("data-whatintent", t), T("intent"))
-                        }
-                    },
-                    y = function(e) {
-                        "touchstart" === e.type ? (c = !1, m(e)) : c = !0
-                    },
-                    T = function(e) {
-                        for (var i = 0, o = n.length; i < o; i++) n[i].type === e && n[i].fn.call(void 0, t)
-                    },
-                    S = function(e) {
-                        return "number" == typeof e.pointerType ? h[e.pointerType] : "pen" === e.pointerType ? "touch" : e.pointerType
-                    },
-                    b = function() {
-                        return "onwheel" in document.createElement("div") ? "wheel" : void 0 !== document.onmousewheel ? "mousewheel" : "DOMMouseScroll"
-                    };
-                return "addEventListener" in window && Array.prototype.indexOf && (a[b()] = "mouse", v(), g()), {
-                    ask: function(i) {
-                        return "loose" === i ? t : e
-                    },
-                    types: function() {
-                        return l
-                    },
-                    ignoreKeys: function(e) {
-                        s = e
-                    },
-                    registerOnChange: function(e, t) {
-                        n.push({
-                            fn: e,
-                            type: t || "input"
-                        })
-                    },
-                    unRegisterOnChange: function(e) {
-                        var t = function(e) {
-                            for (var t = 0, i = n.length; t < i; t++)
-                                if (n[t].fn === e) return t
-                        }(e);
-                        t && n.splice(t, 1)
-                    }
-                }
-            }()
-        }])
-    }, e.exports = o()
 }, function(e, t, i) {
     "use strict";
     var o, n = i(0),
@@ -442,8 +290,10 @@
         l = i(2),
         c = i(4),
         d = i(11);
+
     r.Foundation.addToJquery(s.default), r.Foundation.Keyboard = a.Keyboard, r.Foundation.MediaQuery = l.MediaQuery, c.Triggers.init(s.default, r.Foundation), r.Foundation.plugin(d.OffCanvas, "OffCanvas"), e.exports = r.Foundation
 }, function(e, t, i) {
+
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -568,293 +418,9 @@
     function u(e) {
         return e.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
     }
-    c.util = {
-            throttle: function(e, t) {
-                var i = null;
-                return function() {
-                    var o = this,
-                        n = arguments;
-                    null === i && (i = setTimeout((function() {
-                        e.apply(o, n), i = null
-                    }), t))
-                }
-            }
-        }, window.Foundation = c,
-        function() {
-            Date.now && window.Date.now || (window.Date.now = Date.now = function() {
-                return (new Date).getTime()
-            });
-            for (var e = ["webkit", "moz"], t = 0; t < e.length && !window.requestAnimationFrame; ++t) {
-                var i = e[t];
-                window.requestAnimationFrame = window[i + "RequestAnimationFrame"], window.cancelAnimationFrame = window[i + "CancelAnimationFrame"] || window[i + "CancelRequestAnimationFrame"]
-            }
-            if (/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent) || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
-                var o = 0;
-                window.requestAnimationFrame = function(e) {
-                    var t = Date.now(),
-                        i = Math.max(o + 16, t);
-                    return setTimeout((function() {
-                        e(o = i)
-                    }), i - t)
-                }, window.cancelAnimationFrame = clearTimeout
-            }
-            window.performance && window.performance.now || (window.performance = {
-                start: Date.now(),
-                now: function() {
-                    return Date.now() - this.start
-                }
-            })
-        }(), Function.prototype.bind || (Function.prototype.bind = function(e) {
-            if ("function" != typeof this) throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
-            var t = Array.prototype.slice.call(arguments, 1),
-                i = this,
-                o = function() {},
-                n = function() {
-                    return i.apply(this instanceof o ? this : e, t.concat(Array.prototype.slice.call(arguments)))
-                };
-            return this.prototype && (o.prototype = this.prototype), n.prototype = new o, n
-        }), t.Foundation = c
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    }), t.Motion = t.Move = void 0;
-    var o, n = i(0),
-        s = (o = n) && o.__esModule ? o : {
-            default: o
-        },
-        r = i(1);
-    var a = ["mui-enter", "mui-leave"],
-        l = ["mui-enter-active", "mui-leave-active"],
-        c = {
-            animateIn: function(e, t, i) {
-                d(!0, e, t, i)
-            },
-            animateOut: function(e, t, i) {
-                d(!1, e, t, i)
-            }
-        };
-
-    function d(e, t, i, o) {
-        if ((t = (0, s.default)(t).eq(0)).length) {
-            var n = e ? a[0] : a[1],
-                c = e ? l[0] : l[1];
-            d(), t.addClass(i).css("transition", "none"), requestAnimationFrame((function() {
-                t.addClass(n), e && t.show()
-            })), requestAnimationFrame((function() {
-                t[0].offsetWidth, t.css("transition", "").addClass(c)
-            })), t.one((0, r.transitionend)(t), (function() {
-                e || t.hide();
-                d(), o && o.apply(t)
-            }))
-        }
-
-        function d() {
-            t[0].style.transitionDuration = 0, t.removeClass(n + " " + c + " " + i)
-        }
-    }
-    t.Move = function(e, t, i) {
-        var o, n, s = null;
-        if (0 === e) return i.apply(t), void t.trigger("finished.zf.animate", [t]).triggerHandler("finished.zf.animate", [t]);
-        o = window.requestAnimationFrame((function r(a) {
-            s || (s = a), n = a - s, i.apply(t), n < e ? o = window.requestAnimationFrame(r, t) : (window.cancelAnimationFrame(o), t.trigger("finished.zf.animate", [t]).triggerHandler("finished.zf.animate", [t]))
-        }))
-    }, t.Motion = c
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    }), t.OffCanvas = void 0;
-    var o, n = function() {
-            function e(e, t) {
-                for (var i = 0; i < t.length; i++) {
-                    var o = t[i];
-                    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, o.key, o)
-                }
-            }
-            return function(t, i, o) {
-                return i && e(t.prototype, i), o && e(t, o), t
-            }
-        }(),
-        s = i(0),
-        r = (o = s) && o.__esModule ? o : {
-            default: o
-        },
-        a = i(3),
-        l = i(2),
-        c = i(1),
-        d = i(12),
-        u = i(4);
-
-    function h(e, t) {
-        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-    }
-
-    function p(e, t) {
-        if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return !t || "object" != typeof t && "function" != typeof t ? e : t
-    }
-    var f = function(e) {
-        function t() {
-            return h(this, t), p(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments))
-        }
-        return function(e, t) {
-            if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + typeof t);
-            e.prototype = Object.create(t && t.prototype, {
-                constructor: {
-                    value: e,
-                    enumerable: !1,
-                    writable: !0,
-                    configurable: !0
-                }
-            }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
-        }(t, e), n(t, [{
-            key: "_setup",
-            value: function(e, i) {
-                var o = this;
-                this.className = "OffCanvas", this.$element = e, this.options = r.default.extend({}, t.defaults, this.$element.data(), i), this.contentClasses = {
-                    base: [],
-                    reveal: []
-                }, this.$lastTrigger = (0, r.default)(), this.$triggers = (0, r.default)(), this.position = "left", this.$content = (0, r.default)(), this.nested = !!this.options.nested, (0, r.default)(["push", "overlap"]).each((function(e, t) {
-                    o.contentClasses.base.push("has-transition-" + t)
-                })), (0, r.default)(["left", "right", "top", "bottom"]).each((function(e, t) {
-                    o.contentClasses.base.push("has-position-" + t), o.contentClasses.reveal.push("has-reveal-" + t)
-                })), u.Triggers.init(r.default), l.MediaQuery._init(), this._init(), this._events(), a.Keyboard.register("OffCanvas", {
-                    ESCAPE: "close"
-                })
-            }
-        }, {
-            key: "_init",
-            value: function() {
-                var e = this.$element.attr("id");
-                if (this.$element.attr("aria-hidden", "true"), this.options.contentId ? this.$content = (0, r.default)("#" + this.options.contentId) : this.$element.siblings("[data-off-canvas-content]").length ? this.$content = this.$element.siblings("[data-off-canvas-content]").first() : this.$content = this.$element.closest("[data-off-canvas-content]").first(), this.options.contentId ? this.options.contentId && null === this.options.nested && console.warn("Remember to use the nested option if using the content ID option!") : this.nested = 0 === this.$element.siblings("[data-off-canvas-content]").length, !0 === this.nested && (this.options.transition = "overlap", this.$element.removeClass("is-transition-push")), this.$element.addClass("is-transition-" + this.options.transition + " is-closed"), this.$triggers = (0, r.default)(document).find('[data-open="' + e + '"], [data-close="' + e + '"], [data-toggle="' + e + '"]').attr("aria-expanded", "false").attr("aria-controls", e), this.position = this.$element.is(".position-left, .position-top, .position-right, .position-bottom") ? this.$element.attr("class").match(/position\-(left|top|right|bottom)/)[1] : this.position, !0 === this.options.contentOverlay) {
-                    var t = document.createElement("div"),
-                        i = "fixed" === (0, r.default)(this.$element).css("position") ? "is-overlay-fixed" : "is-overlay-absolute";
-                    t.setAttribute("class", "js-off-canvas-overlay " + i), this.$overlay = (0, r.default)(t), "is-overlay-fixed" === i ? (0, r.default)(this.$overlay).insertAfter(this.$element) : this.$content.append(this.$overlay)
-                }
-                this.options.isRevealed = this.options.isRevealed || new RegExp(this.options.revealClass, "g").test(this.$element[0].className), !0 === this.options.isRevealed && (this.options.revealOn = this.options.revealOn || this.$element[0].className.match(/(reveal-for-medium|reveal-for-large)/g)[0].split("-")[2], this._setMQChecker()), this.options.transitionTime && this.$element.css("transition-duration", this.options.transitionTime), this._removeContentClasses()
-            }
-        }, {
-            key: "_events",
-            value: function() {
-                (this.$element.off(".zf.trigger .zf.offcanvas").on({
-                    "open.zf.trigger": this.open.bind(this),
-                    "close.zf.trigger": this.close.bind(this),
-                    "toggle.zf.trigger": this.toggle.bind(this),
-                    "keydown.zf.offcanvas": this._handleKeyboard.bind(this)
-                }), !0 === this.options.closeOnClick) && (this.options.contentOverlay ? this.$overlay : this.$content).on({
-                    "click.zf.offcanvas": this.close.bind(this)
-                })
-            }
-        }, {
-            key: "_setMQChecker",
-            value: function() {
-                var e = this;
-                (0, r.default)(window).on("changed.zf.mediaquery", (function() {
-                    l.MediaQuery.atLeast(e.options.revealOn) ? e.reveal(!0) : e.reveal(!1)
-                })).one("load.zf.offcanvas", (function() {
-                    l.MediaQuery.atLeast(e.options.revealOn) && e.reveal(!0)
-                }))
-            }
-        }, {
-            key: "_removeContentClasses",
-            value: function(e) {
-                "boolean" != typeof e ? this.$content.removeClass(this.contentClasses.base.join(" ")) : !1 === e && this.$content.removeClass("has-reveal-" + this.position)
-            }
-        }, {
-            key: "_addContentClasses",
-            value: function(e) {
-                this._removeContentClasses(e), "boolean" != typeof e ? this.$content.addClass("has-transition-" + this.options.transition + " has-position-" + this.position) : !0 === e && this.$content.addClass("has-reveal-" + this.position)
-            }
-        }, {
-            key: "reveal",
-            value: function(e) {
-                e ? (this.close(), this.isRevealed = !0, this.$element.attr("aria-hidden", "false"), this.$element.off("open.zf.trigger toggle.zf.trigger"), this.$element.removeClass("is-closed")) : (this.isRevealed = !1, this.$element.attr("aria-hidden", "true"), this.$element.off("open.zf.trigger toggle.zf.trigger").on({
-                    "open.zf.trigger": this.open.bind(this),
-                    "toggle.zf.trigger": this.toggle.bind(this)
-                }), this.$element.addClass("is-closed")), this._addContentClasses(e)
-            }
-        }, {
-            key: "_stopScrolling",
-            value: function(e) {
-                return !1
-            }
-        }, {
-            key: "_recordScrollable",
-            value: function(e) {
-                this.scrollHeight !== this.clientHeight && (0 === this.scrollTop && (this.scrollTop = 1), this.scrollTop === this.scrollHeight - this.clientHeight && (this.scrollTop = this.scrollHeight - this.clientHeight - 1)), this.allowUp = this.scrollTop > 0, this.allowDown = this.scrollTop < this.scrollHeight - this.clientHeight, this.lastY = e.originalEvent.pageY
-            }
-        }, {
-            key: "_stopScrollPropagation",
-            value: function(e) {
-                var t = e.pageY < this.lastY,
-                    i = !t;
-                this.lastY = e.pageY, t && this.allowUp || i && this.allowDown ? e.stopPropagation() : e.preventDefault()
-            }
-        }, {
-            key: "open",
-            value: function(e, t) {
-                if (!this.$element.hasClass("is-open") && !this.isRevealed) {
-                    var i = this;
-                    t && (this.$lastTrigger = t), "top" === this.options.forceTo ? window.scrollTo(0, 0) : "bottom" === this.options.forceTo && window.scrollTo(0, document.body.scrollHeight), this.options.transitionTime && "overlap" !== this.options.transition ? this.$element.siblings("[data-off-canvas-content]").css("transition-duration", this.options.transitionTime) : this.$element.siblings("[data-off-canvas-content]").css("transition-duration", ""), this.$element.addClass("is-open").removeClass("is-closed"), this.$triggers.attr("aria-expanded", "true"), this.$element.attr("aria-hidden", "false").trigger("opened.zf.offcanvas"), this.$content.addClass("is-open-" + this.position), !1 === this.options.contentScroll && ((0, r.default)("body").addClass("is-off-canvas-open").on("touchmove", this._stopScrolling), this.$element.on("touchstart", this._recordScrollable), this.$element.on("touchmove", this._stopScrollPropagation)), !0 === this.options.contentOverlay && this.$overlay.addClass("is-visible"), !0 === this.options.closeOnClick && !0 === this.options.contentOverlay && this.$overlay.addClass("is-closable"), !0 === this.options.autoFocus && this.$element.one((0, c.transitionend)(this.$element), (function() {
-                        if (i.$element.hasClass("is-open")) {
-                            var e = i.$element.find("[data-autofocus]");
-                            e.length ? e.eq(0).focus() : i.$element.find("a, button").eq(0).focus()
-                        }
-                    })), !0 === this.options.trapFocus && (this.$content.attr("tabindex", "-1"), a.Keyboard.trapFocus(this.$element)), this._addContentClasses()
-                }
-            }
-        }, {
-            key: "close",
-            value: function(e) {
-                if (this.$element.hasClass("is-open") && !this.isRevealed) {
-                    var t = this;
-                    this.$element.removeClass("is-open"), this.$element.attr("aria-hidden", "true").trigger("closed.zf.offcanvas"), this.$content.removeClass("is-open-left is-open-top is-open-right is-open-bottom"), !1 === this.options.contentScroll && ((0, r.default)("body").removeClass("is-off-canvas-open").off("touchmove", this._stopScrolling), this.$element.off("touchstart", this._recordScrollable), this.$element.off("touchmove", this._stopScrollPropagation)), !0 === this.options.contentOverlay && this.$overlay.removeClass("is-visible"), !0 === this.options.closeOnClick && !0 === this.options.contentOverlay && this.$overlay.removeClass("is-closable"), this.$triggers.attr("aria-expanded", "false"), !0 === this.options.trapFocus && (this.$content.removeAttr("tabindex"), a.Keyboard.releaseFocus(this.$element)), this.$element.one((0, c.transitionend)(this.$element), (function(e) {
-                        t.$element.addClass("is-closed"), t._removeContentClasses()
-                    }))
-                }
-            }
-        }, {
-            key: "toggle",
-            value: function(e, t) {
-                this.$element.hasClass("is-open") ? this.close(e, t) : this.open(e, t)
-            }
-        }, {
-            key: "_handleKeyboard",
-            value: function(e) {
-                var t = this;
-                a.Keyboard.handleKey(e, "OffCanvas", {
-                    close: function() {
-                        return t.close(), t.$lastTrigger.focus(), !0
-                    },
-                    handled: function() {
-                        e.stopPropagation(), e.preventDefault()
-                    }
-                })
-            }
-        }, {
-            key: "_destroy",
-            value: function() {
-                this.close(), this.$element.off(".zf.trigger .zf.offcanvas"), this.$overlay.off(".zf.offcanvas")
-            }
-        }]), t
-    }(d.Plugin);
-    f.defaults = {
-        closeOnClick: !0,
-        contentOverlay: !0,
-        contentId: null,
-        nested: null,
-        contentScroll: !0,
-        transitionTime: null,
-        transition: "push",
-        forceTo: null,
-        isRevealed: !1,
-        revealOn: null,
-        autoFocus: !0,
-        revealClass: "reveal-for-",
-        trapFocus: !1
-    }, t.OffCanvas = f
-}, function(e, t, i) {
+    c.util = {}, window.Foundation = c,
+        function() {}(), Function.prototype.bind || (Function.prototype.bind = function(e) {}), t.Foundation = c
+}, function(e, t, i) {}, function(e, t, i) {}, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -923,12 +489,12 @@
     ///////////////////APARECE CONTEIDO
 
 
-    var r, a, l, c, d, u, h, p, f, v, m, g, w, y, T, S, b, x = (r = animation_tl("1"), a = $("[data-for-people]"), l = $("[data-projects-slider]"), $("[data-founders-slider]"), c = $("[data-contact-slider]"), d = $("[data-projects-close]"), u = $("[data-projects-wrap]"), h = $("[data-projects-list]"), p = $("[data-projects-list-mob]"), f = h.find("[data-projects-list-item]"), v = p.find("[data-projects-list-item]"), m = $("[data-project-slide]"), g = $("[data-projects-scroll-list]"), w = $("[data-projects-scroll-wrap]"), y = $("[data-news-slider]"), $("#contact-inner"), T = function() {
+    var r, a, l, c, d, u, h, p, f, v, m, g, w, y, T, S, b, x = (r = animation_tl("1"), a = $("[data-for-people]"), l = $("[data-industries-slider]"), $("[data-founders-slider]"), c = $("[data-contact-slider]"), d = $("[data-industries-close]"), u = $("[data-industries-wrap]"), h = $("[data-industries-list]"), p = $("[data-industries-list-mob]"), f = h.find("[data-industries-list-item]"), v = p.find("[data-industries-list-item]"), m = $("[data-project-slide]"), g = $("[data-industries-scroll-list]"), w = $("[data-industries-scroll-wrap]"), y = $("[data-news-slider]"), $("#contact-inner"), T = function() {
             return $(document).width() < 640
         }, S = function() {
             return $(document).width() < 900 && $(document).width() >= 640
         }, b = {
-            moveProjects: function(e) {
+            moveindustries: function(e) {
                 var t = g.outerHeight() - (w.outerHeight() - 96),
                     i = t * o - 60,
                     o = (i = e.pageY - w[0].offsetTop) / w.outerHeight();
@@ -941,10 +507,10 @@
                 TweenMax.to(g, .6, {
                     y: 0,
                     ease: Power2.easeOut
-                }), w.off("mousemove.projectsSroll", this.moveProjects)
+                }), w.off("mousemove.industriesSroll", this.moveindustries)
             },
             on: function() {
-                w.on("mousemove.projectsSroll", this.moveProjects)
+                w.on("mousemove.industriesSroll", this.moveindustries)
             }
         }, {
             init: function() {
@@ -980,7 +546,7 @@
                             ease: Power2.easeOut
                         }, 0).set(e.aScroll.parent(), {
                             overflow: "visible"
-                        }), T() || S() || "home" != e.data("section") && "projects" != e.data("section") ? (t.hide.staggerTo(e.aTitle.lines, .7, {
+                        }), T() || S() || "home" != e.data("section") && "industries" != e.data("section") ? (t.hide.staggerTo(e.aTitle.lines, .7, {
                             yPercent: -100,
                             opacity: 0,
                             ease: Power2.easeIn
@@ -1008,7 +574,7 @@
                         }, "moveBox-=0.45").to(e.aLine, .4, {
                             scaleY: 0,
                             transformOrigin: "50% 0%"
-                        }, "-=0.05"), "projects" == e.data("section")) {
+                        }, "-=0.05"), "industries" == e.data("section")) {
                         m.each((function() {
                             var e = $(this),
                                 t = {
@@ -1041,27 +607,27 @@
                                 paused: !0
                             })
                         };
-                        o.show.add("projects", 0).staggerTo(p.find("[data-projects-list-item]"), .8, {
+                        o.show.add("industries", 0).staggerTo(p.find("[data-industries-list-item]"), .8, {
                             xPercent: -100,
                             ease: Power3.easeInOut,
                             force3D: !0
-                        }, .1, "projects").staggerTo(p.find("[data-line-h]"), .4, {
+                        }, .1, "industries").staggerTo(p.find("[data-line-h]"), .4, {
                             scaleX: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects").staggerTo(p.find("[data-line]"), .5, {
+                        }, .1, "industries").staggerTo(p.find("[data-line]"), .5, {
                             scale: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.55").staggerFrom(p.find("[data-project-list-title]"), .3, {
+                        }, .1, "industries+=0.55").staggerFrom(p.find("[data-project-list-title]"), .3, {
                             y: -5,
                             opacity: 0,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.8"), o.hide.staggerTo(p.find("[data-line]"), .6, {
+                        }, .1, "industries+=0.8"), o.hide.staggerTo(p.find("[data-line]"), .6, {
                             scale: 0,
                             ease: Power3.easeIn
                         }, 0).to(p.find("[data-project-list-title]"), .6, {
                             opacity: 0,
                             ease: Power3.easeIn
-                        }, 0).to(p.find("[data-projects-list-item]"), .8, {
+                        }, 0).to(p.find("[data-industries-list-item]"), .8, {
                             transform: "translateX(0)",
                             ease: Power3.easeInOut,
                             clearProps: "all"
@@ -1077,20 +643,20 @@
                                 paused: !0
                             })
                         };
-                        n.show.add("projects", 0).staggerTo(f, .8, {
+                        n.show.add("industries", 0).staggerTo(f, .8, {
                             xPercent: -35,
                             ease: Power3.easeInOut
-                        }, .1, "projects").staggerTo(h.find("[data-line-h]"), .4, {
+                        }, .1, "industries").staggerTo(h.find("[data-line-h]"), .4, {
                             scaleX: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects").staggerTo(h.find("[data-line]"), .5, {
+                        }, .1, "industries").staggerTo(h.find("[data-line]"), .5, {
                             scale: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.55").staggerFrom(h.find("[data-project-list-title]"), .3, {
+                        }, .1, "industries+=0.55").staggerFrom(h.find("[data-project-list-title]"), .3, {
                             y: -5,
                             opacity: 0,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.8"), n.hide.staggerTo(h.find("[data-line]"), .6, {
+                        }, .1, "industries+=0.8"), n.hide.staggerTo(h.find("[data-line]"), .6, {
                             scale: 0,
                             ease: Power3.easeIn
                         }, 0).to(h.find("[data-project-list-title]"), .6, {
@@ -1111,7 +677,7 @@
                             fullpage_api.setAllowScrolling(!0), b.on()
                         })), n.hide.eventCallback("onComplete", (function() {
                             fullpage_api.setAllowScrolling(!0)
-                        })), e.data("projectsTl", n)
+                        })), e.data("industriesTl", n)
                     }
                     e.data("show", t.show), e.data("hide", t.hide)
                 })), new o.default("#fullpage", {
@@ -1119,7 +685,7 @@
                     autoScrolling: !0,
                     menu: "#menu-main-menu",
                     navigation: !1,
-                    anchors: ["home", "projects", "contact"],
+                    anchors: ["home", "industries", "contact"],
                     scrollingSpeed: 1500,
                     scrollOverflow: !0,
                     scrollOverflowReset: !1,
@@ -1156,14 +722,14 @@
                                 })), o.show && (o.show.progress(1, !0), o.show.reverse())
                         }
 
-                        if ("projects" == t.anchor && !window.isLoading) {
-                            var s = $(t.item).data("projectsTl");
+                        if ("industries" == t.anchor && !window.isLoading) {
+                            var s = $(t.item).data("industriesTl");
                             s.show.progress(0), s.show.play(), TweenMax.to(".fp-scroller", .2, {
                                 y: 0
                             })
                         }
-                        if ("projects" == e.anchor && !window.isLoading) {
-                            var c = $(e.item).data("projectsTl");
+                        if ("industries" == e.anchor && !window.isLoading) {
+                            var c = $(e.item).data("industriesTl");
                             c.hide.progress(0), c.hide.play()
                         }
                         var d = "contact" != t.anchor;
@@ -1249,39 +815,23 @@
                 })), l.on("afterChange", (function(e, t, i) {
                     var o = m.eq(i - 1).data("show");
                     o && o.play()
-                })), f.on("click", (function() {
+                })), f.click(function() {
+
+                    //console.log("ES CAMBIA TEXTO");
+
                     var e = $(this),
                         t = f.index(e);
-                    "projects" == fullpage_api.getActiveSection().anchor ? (f.removeClass("active"), e.addClass("active"), l.slick("slickGoTo", t + 1)) : l.slick("slickGoTo", 0)
-                })), v.on("click", (function() {
-                    var e = $(this),
-                        t = v.index(e);
-                    u.addClass("open"), l.slick("slickGoTo", t + 1)
-                })), y.slick({
-                    arrows: !0,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: !1,
-                    prevArrow: "[data-news-prev]",
-                    nextArrow: "[data-news-next]",
-                    responsive: [{
-                        breakpoint: 900,
-                        settings: {
-                            slidesToShow: 1,
-                            variableWidth: !0
-                        }
-                    }, {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            variableWidth: !0
-                        }
-                    }]
+                    "industries" == fullpage_api.getActiveSection().anchor ? (f.removeClass("active"), e.addClass("active"), l.slick("slickGoTo", t + 1)) : l.slick("slickGoTo", 0)
                 }), d.on("click", (function() {
+
+                    //console.log(1);
                     u.removeClass("open"), fullpage_api.setAllowScrolling(!0)
-                })), h.on("click", (function() {
-                    fullpage_api.moveTo("projects")
-                }))
+                })), h.click(function() {
+
+                    //console.log("slider industries");
+
+                    fullpage_api.moveTo("industries")
+                })
             },
             play: function() {}
         }),
@@ -1462,7 +1012,7 @@
                                             }
                                     }), {
                                         threshold: [.07]
-                                    }).observe(o[0])
+                                    })
                                 }
                                 $("[data-founders-wrap]")[0];
                                 var n = {
@@ -1623,9 +1173,6 @@
                 }), e.tap = function(e, t) {
                     var i = s.createEvent("Event");
                     i.initEvent(t, !0, !0), i.pageX = e.pageX, i.pageY = e.pageY, e.target.dispatchEvent(i)
-                }, e.click = function(e) {
-                    var t, i = e.target;
-                    /(SELECT|INPUT|TEXTAREA)/i.test(i.tagName) || ((t = s.createEvent(n.MouseEvent ? "MouseEvents" : "Event")).initEvent("click", !0, !0), t.view = e.view || n, t.detail = 1, t.screenX = i.screenX || 0, t.screenY = i.screenY || 0, t.clientX = i.clientX || 0, t.clientY = i.clientY || 0, t.ctrlKey = !!e.ctrlKey, t.altKey = !!e.altKey, t.shiftKey = !!e.shiftKey, t.metaKey = !!e.metaKey, t.button = 0, t.relatedTarget = null, t._constructed = !0, i.dispatchEvent(t))
                 }, e
             }();
 
@@ -1738,7 +1285,11 @@
                         d = 0,
                         u = "";
                     if (this.isInTransition = 0, this.initiated = 0, this.endTime = l.getTime(), !this.resetPosition(this.options.bounceTime)) {
-                        if (this.scrollTo(n, s), !this.moved) return this.options.tap && l.tap(e, this.options.tap), this.options.click && l.click(e), void this._execEvent("scrollCancel");
+                        if (this.scrollTo(n, s), !this.moved)
+                            return this.options.tap && l.tap(e, this.options.tap),
+
+                                this.options.click && l.click(e), void this._execEvent("scrollCancel");
+
                         if (this._events.flick && o < 200 && a < 100 && c < 100) this._execEvent("flick");
                         else {
                             if (this.options.momentum && o < 300 && (t = this.hasHorizontalScroll ? l.momentum(this.x, this.startX, o, this.maxScrollX, this.options.bounce ? this.wrapperWidth : 0, this.options.deceleration) : {
@@ -3518,16 +3069,7 @@
                     }), 200))
                 }
 
-                function zt(e) {
-                    var t = It(e);
-                    h("video, audio", t).forEach((function(e) {
-                        e.hasAttribute("data-autoplay") && "function" == typeof e.play && e.play()
-                    })), h('iframe[src*="youtube.com/embed/"]', t).forEach((function(e) {
-                        e.hasAttribute("data-autoplay") && Dt(e), e.onload = function() {
-                            e.hasAttribute("data-autoplay") && Dt(e)
-                        }
-                    }))
-                }
+                function zt(e) {}
 
                 function Dt(e) {
                     e.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*")
@@ -3979,7 +3521,7 @@
 
 
 
-
+        /////WEY AQUI EMPIEZA EL PEDO
         "use strict";
         n = [i(0)], void 0 === (s = "function" == typeof(o = function(e) {
             var t = window.Slick || {};
@@ -4144,6 +3686,7 @@
                     o.$dots = i.appendTo(o.options.appendDots), o.$dots.find("li").first().addClass("slick-active")
                 }
             }, t.prototype.buildOut = function() {
+                //console.log("sobres");
                 var t = this;
                 t.$slides = t.$slider.children(t.options.slide + ":not(.slick-cloned)").addClass("slick-slide"), t.slideCount = t.$slides.length, t.$slides.each((function(t, i) {
                     e(i).attr("data-slick-index", t).data("originalStyling", e(i).attr("style") || "")
@@ -4178,6 +3721,9 @@
                     null !== n ? null !== r.activeBreakpoint ? (n !== r.activeBreakpoint || i) && (r.activeBreakpoint = n, "unslick" === r.breakpointSettings[n] ? r.unslick(n) : (r.options = e.extend({}, r.originalSettings, r.breakpointSettings[n]), !0 === t && (r.currentSlide = r.options.initialSlide), r.refresh(t)), a = n) : (r.activeBreakpoint = n, "unslick" === r.breakpointSettings[n] ? r.unslick(n) : (r.options = e.extend({}, r.originalSettings, r.breakpointSettings[n]), !0 === t && (r.currentSlide = r.options.initialSlide), r.refresh(t)), a = n) : null !== r.activeBreakpoint && (r.activeBreakpoint = null, r.options = r.originalSettings, !0 === t && (r.currentSlide = r.options.initialSlide), r.refresh(t), a = n), t || !1 === a || r.$slider.trigger("breakpoint", [r, a])
                 }
             }, t.prototype.changeSlide = function(t, i) {
+
+                //console.log("ejecuta ChangeSlide");
+
                 var o, n, s = this,
                     r = e(t.currentTarget);
                 switch (r.is("a") && t.preventDefault(), r.is("li") || (r = r.closest("li")), o = s.slideCount % s.options.slidesToScroll != 0 ? 0 : (s.slideCount - s.currentSlide) % s.options.slidesToScroll, t.data.message) {
@@ -4206,10 +3752,7 @@
                         i = t[o]
                     }
                 return e
-            }, t.prototype.cleanUpEvents = function() {
-                var t = this;
-                t.options.dots && null !== t.$dots && (e("li", t.$dots).off("click.slick", t.changeSlide).off("mouseenter.slick", e.proxy(t.interrupt, t, !0)).off("mouseleave.slick", e.proxy(t.interrupt, t, !1)), !0 === t.options.accessibility && t.$dots.off("keydown.slick", t.keyHandler)), t.$slider.off("focus.slick blur.slick"), !0 === t.options.arrows && t.slideCount > t.options.slidesToShow && (t.$prevArrow && t.$prevArrow.off("click.slick", t.changeSlide), t.$nextArrow && t.$nextArrow.off("click.slick", t.changeSlide), !0 === t.options.accessibility && (t.$prevArrow && t.$prevArrow.off("keydown.slick", t.keyHandler), t.$nextArrow && t.$nextArrow.off("keydown.slick", t.keyHandler))), t.$list.off("touchstart.slick mousedown.slick", t.swipeHandler), t.$list.off("touchmove.slick mousemove.slick", t.swipeHandler), t.$list.off("touchend.slick mouseup.slick", t.swipeHandler), t.$list.off("touchcancel.slick mouseleave.slick", t.swipeHandler), t.$list.off("click.slick", t.clickHandler), e(document).off(t.visibilityChange, t.visibility), t.cleanUpSlideEvents(), !0 === t.options.accessibility && t.$list.off("keydown.slick", t.keyHandler), !0 === t.options.focusOnSelect && e(t.$slideTrack).children().off("click.slick", t.selectHandler), e(window).off("orientationchange.slick.slick-" + t.instanceUid, t.orientationChange), e(window).off("resize.slick.slick-" + t.instanceUid, t.resize), e("[draggable!=true]", t.$slideTrack).off("dragstart", t.preventDefault), e(window).off("load.slick.slick-" + t.instanceUid, t.setPosition)
-            }, t.prototype.cleanUpSlideEvents = function() {
+            }, t.prototype.cleanUpEvents = function() {}, t.prototype.cleanUpSlideEvents = function() {
                 var t = this;
                 t.$list.off("mouseenter.slick", e.proxy(t.interrupt, t, !0)), t.$list.off("mouseleave.slick", e.proxy(t.interrupt, t, !1))
             }, t.prototype.cleanUpRows = function() {
@@ -4218,6 +3761,7 @@
             }, t.prototype.clickHandler = function(e) {
                 !1 === this.shouldClick && (e.stopImmediatePropagation(), e.stopPropagation(), e.preventDefault())
             }, t.prototype.destroy = function(t) {
+                //console.log("nosobres");
                 var i = this;
                 i.autoPlayClear(), i.touchObject = {}, i.cleanUpEvents(), e(".slick-cloned", i.$slider).detach(), i.$dots && i.$dots.remove(), i.$prevArrow && i.$prevArrow.length && (i.$prevArrow.removeClass("slick-disabled slick-arrow slick-hidden").removeAttr("aria-hidden aria-disabled tabindex").css("display", ""), i.htmlExpr.test(i.options.prevArrow) && i.$prevArrow.remove()), i.$nextArrow && i.$nextArrow.length && (i.$nextArrow.removeClass("slick-disabled slick-arrow slick-hidden").removeAttr("aria-hidden aria-disabled tabindex").css("display", ""), i.htmlExpr.test(i.options.nextArrow) && i.$nextArrow.remove()), i.$slides && (i.$slides.removeClass("slick-slide slick-active slick-center slick-visible slick-current").removeAttr("aria-hidden").removeAttr("data-slick-index").each((function() {
                     e(this).attr("style", e(this).data("originalStyling"))
@@ -4296,6 +3840,8 @@
                     if (s.offsetLeft - i + e(s).outerWidth() / 2 > -1 * o.swipeLeft) return t = s, !1
                 })), Math.abs(e(t).attr("data-slick-index") - o.currentSlide) || 1) : o.options.slidesToScroll
             }, t.prototype.goTo = t.prototype.slickGoTo = function(e, t) {
+
+
                 this.changeSlide({
                     data: {
                         message: "index",
@@ -4305,55 +3851,10 @@
             }, t.prototype.init = function(t) {
                 var i = this;
                 e(i.$slider).hasClass("slick-initialized") || (e(i.$slider).addClass("slick-initialized"), i.buildRows(), i.buildOut(), i.setProps(), i.startLoad(), i.loadSlider(), i.initializeEvents(), i.updateArrows(), i.updateDots(), i.checkResponsive(!0), i.focusHandler()), t && i.$slider.trigger("init", [i]), !0 === i.options.accessibility && i.initADA(), i.options.autoplay && (i.paused = !1, i.autoPlay())
-            }, t.prototype.initADA = function() {
-                var t = this,
-                    i = Math.ceil(t.slideCount / t.options.slidesToShow),
-                    o = t.getNavigableIndexes().filter((function(e) {
-                        return e >= 0 && e < t.slideCount
-                    }));
-                t.$slides.add(t.$slideTrack.find(".slick-cloned")).attr({
-                    "aria-hidden": "true",
-                    tabindex: "-1"
-                }).find("a, input, button, select").attr({
-                    tabindex: "-1"
-                }), null !== t.$dots && (t.$slides.not(t.$slideTrack.find(".slick-cloned")).each((function(i) {
-                    var n = o.indexOf(i);
-                    if (e(this).attr({
-                            role: "tabpanel",
-                            id: "slick-slide" + t.instanceUid + i,
-                            tabindex: -1
-                        }), -1 !== n) {
-                        var s = "slick-slide-control" + t.instanceUid + n;
-                        e("#" + s).length && e(this).attr({
-                            "aria-describedby": s
-                        })
-                    }
-                })), t.$dots.attr("role", "tablist").find("li").each((function(n) {
-                    var s = o[n];
-                    e(this).attr({
-                        role: "presentation"
-                    }), e(this).find("button").first().attr({
-                        role: "tab",
-                        id: "slick-slide-control" + t.instanceUid + n,
-                        "aria-controls": "slick-slide" + t.instanceUid + s,
-                        "aria-label": n + 1 + " of " + i,
-                        "aria-selected": null,
-                        tabindex: "-1"
-                    })
-                })).eq(t.currentSlide).find("button").attr({
-                    "aria-selected": "true",
-                    tabindex: "0"
-                }).end());
-                for (var n = t.currentSlide, s = n + t.options.slidesToShow; n < s; n++) t.options.focusOnChange ? t.$slides.eq(n).attr({
-                    tabindex: "0"
-                }) : t.$slides.eq(n).removeAttr("tabindex");
-                t.activateADA()
-            }, t.prototype.initArrowEvents = function() {
+            }, t.prototype.initADA = function() {}, t.prototype.initArrowEvents = function() {
                 var e = this;
                 !0 === e.options.arrows && e.slideCount > e.options.slidesToShow && (e.$prevArrow.off("click.slick").on("click.slick", {
                     message: "previous"
-                }, e.changeSlide), e.$nextArrow.off("click.slick").on("click.slick", {
-                    message: "next"
                 }, e.changeSlide), !0 === e.options.accessibility && (e.$prevArrow.on("keydown.slick", e.keyHandler), e.$nextArrow.on("keydown.slick", e.keyHandler)))
             }, t.prototype.initDotEvents = function() {
                 var t = this;
@@ -4530,22 +4031,7 @@
                     var t = e.$slides.eq(e.currentSlide).outerHeight(!0);
                     e.$list.css("height", t)
                 }
-            }, t.prototype.setOption = t.prototype.slickSetOption = function() {
-                var t, i, o, n, s, r = this,
-                    a = !1;
-                if ("object" === e.type(arguments[0]) ? (o = arguments[0], a = arguments[1], s = "multiple") : "string" === e.type(arguments[0]) && (o = arguments[0], n = arguments[1], a = arguments[2], "responsive" === arguments[0] && "array" === e.type(arguments[1]) ? s = "responsive" : void 0 !== arguments[1] && (s = "single")), "single" === s) r.options[o] = n;
-                else if ("multiple" === s) e.each(o, (function(e, t) {
-                    r.options[e] = t
-                }));
-                else if ("responsive" === s)
-                    for (i in n)
-                        if ("array" !== e.type(r.options.responsive)) r.options.responsive = [n[i]];
-                        else {
-                            for (t = r.options.responsive.length - 1; t >= 0;) r.options.responsive[t].breakpoint === n[i].breakpoint && r.options.responsive.splice(t, 1), t--;
-                            r.options.responsive.push(n[i])
-                        }
-                a && (r.unload(), r.reinit())
-            }, t.prototype.setPosition = function() {
+            }, t.prototype.setOption = t.prototype.slickSetOption = function() {}, t.prototype.setPosition = function() {
                 var e = this;
                 e.setDimensions(), e.setHeight(), !1 === e.options.fade ? e.setCSS(e.getLeft(e.currentSlide)) : e.setFade(), e.$slider.trigger("setPosition", [e])
             }, t.prototype.setProps = function() {
@@ -4571,6 +4057,8 @@
             }, t.prototype.interrupt = function(e) {
                 e || this.autoPlay(), this.interrupted = e
             }, t.prototype.selectHandler = function(t) {
+
+
                 var i = this,
                     o = e(t.target).is(".slick-slide") ? e(t.target) : e(t.target).parents(".slick-slide"),
                     n = parseInt(o.attr("data-slick-index"));
@@ -4663,83 +4151,7 @@
             var i
         }) ? o.apply(t, n) : o) || (e.exports = s)
     }()
-}, function(e, t, i) {
-    "use strict";
-    var o, n, s;
-    "function" == typeof Symbol && Symbol.iterator;
-    n = [i(0)], void 0 === (s = "function" == typeof(o = function(e) {
-        var t, i, o = ["wheel", "mousewheel", "DOMMouseScroll", "MozMousePixelScroll"],
-            n = "onwheel" in window.document || 9 <= window.document.documentMode ? ["wheel"] : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
-            s = Array.prototype.slice;
-        if (e.event.fixHooks)
-            for (var r = o.length; r;) e.event.fixHooks[o[--r]] = e.event.mouseHooks;
-        var a = e.event.special.mousewheel = {
-            version: "3.1.12",
-            setup: function() {
-                if (this.addEventListener)
-                    for (var t = n.length; t;) this.addEventListener(n[--t], l, !1);
-                else this.onmousewheel = l;
-                e.data(this, "mousewheel-line-height", a.getLineHeight(this)), e.data(this, "mousewheel-page-height", a.getPageHeight(this))
-            },
-            teardown: function() {
-                if (this.removeEventListener)
-                    for (var t = n.length; t;) this.removeEventListener(n[--t], l, !1);
-                else this.onmousewheel = null;
-                e.removeData(this, "mousewheel-line-height"), e.removeData(this, "mousewheel-page-height")
-            },
-            getLineHeight: function(t) {
-                var i = e(t),
-                    o = i["offsetParent" in e.fn ? "offsetParent" : "parent"]();
-                return o.length || (o = e("body")), parseInt(o.css("fontSize"), 10) || parseInt(i.css("fontSize"), 10) || 16
-            },
-            getPageHeight: function(t) {
-                return e(t).height()
-            },
-            settings: {
-                adjustOldDeltas: !0,
-                normalizeOffset: !0
-            }
-        };
-
-        function l(o) {
-            var n, r = o || window.event,
-                l = s.call(arguments, 1),
-                u = 0,
-                h = 0,
-                p = 0;
-            if ((o = e.event.fix(r)).type = "mousewheel", "detail" in r && (p = -1 * r.detail), "wheelDelta" in r && (p = r.wheelDelta), "wheelDeltaY" in r && (p = r.wheelDeltaY), "wheelDeltaX" in r && (h = -1 * r.wheelDeltaX), "axis" in r && r.axis === r.HORIZONTAL_AXIS && (h = -1 * p, p = 0), u = 0 === p ? h : p, "deltaY" in r && (u = p = -1 * r.deltaY), "deltaX" in r && (h = r.deltaX, 0 === p && (u = -1 * h)), 0 !== p || 0 !== h) {
-                if (1 === r.deltaMode) {
-                    var f = e.data(this, "mousewheel-line-height");
-                    u *= f, p *= f, h *= f
-                } else if (2 === r.deltaMode) {
-                    var v = e.data(this, "mousewheel-page-height");
-                    u *= v, p *= v, h *= v
-                }
-                if (n = Math.max(Math.abs(p), Math.abs(h)), (!i || n < i) && d(r, i = n) && (i /= 40), d(r, n) && (u /= 40, h /= 40, p /= 40), u = Math[1 <= u ? "floor" : "ceil"](u / i), h = Math[1 <= h ? "floor" : "ceil"](h / i), p = Math[1 <= p ? "floor" : "ceil"](p / i), a.settings.normalizeOffset && this.getBoundingClientRect) {
-                    var m = this.getBoundingClientRect();
-                    o.offsetX = o.clientX - m.left, o.offsetY = o.clientY - m.top
-                }
-                return o.deltaX = h, o.deltaY = p, o.deltaFactor = i, o.deltaMode = 0, l.unshift(o, u, h, p), t && window.clearTimeout(t), t = window.setTimeout(c, 200), (e.event.dispatch || e.event.handle).apply(this, l)
-            }
-        }
-
-        function c() {
-            i = null
-        }
-
-        function d(e, t) {
-            return a.settings.adjustOldDeltas && "mousewheel" === e.type && t % 120 == 0
-        }
-        e.fn.extend({
-            mousewheel: function(e) {
-                return e ? this.on("mousewheel", e) : this.trigger("mousewheel")
-            },
-            unmousewheel: function(e) {
-                return this.off("mousewheel", e)
-            }
-        })
-    }) ? o.apply(t, n) : o) || (e.exports = s)
-}, function(e, t, i) {
+}, function(e, t, i) {}, function(e, t, i) {
 
 
 
@@ -6099,19 +5511,15 @@
 }, function(e, t, i) {
     "use strict";
 
+
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
 
 
 
-
-
-
-
-
     var o = function() {
-        $("[data-projects-list]"), $("[data-projects-list-item]");
+        $("[data-industries-list]"), $("[data-industries-list-item]");
         var e = {
                 logo: $("[data-loader-logo]"),
                 wrap: $("[data-loader]"),
@@ -6138,7 +5546,7 @@
         return {
             init: function() {
                 window.isLoading = !0, fullpage_api.setAllowScrolling(!1), t.eventCallback("onComplete", (function() {
-                    "projects" != fullpage_api.getActiveSection().anchor && fullpage_api.setAllowScrolling(!0), window.isLoading = !1
+                    "industries" != fullpage_api.getActiveSection().anchor && fullpage_api.setAllowScrolling(!0), window.isLoading = !1
                 })), t.to(e.logo, 0, {
                     scaleY: 0
                 }).add("loaderParts").to(e.part.top, .6, {
@@ -6164,7 +5572,7 @@
                     transformOrigin: "50% 100%"
                 }, .1, "-=0.4").to(e.bg, .5, {
                     autoAlpha: 0
-                }).add("projects", "-=0.5").add((function() {
+                }).add("industries", "-=0.5").add((function() {
 
 
                     var e = $("[data-offcanvas-menu]");
@@ -6173,12 +5581,12 @@
                         e.append(i)
                     }), "text"), $(".section.active").data("show").play();
                     var t = fullpage_api.getActiveSection();
-                    if ("projects" == t.anchor) {
-                        var i = $(t.item).data("projectsTl");
+                    if ("industries" == t.anchor) {
+                        var i = $(t.item).data("industriesTl");
                         i.show.progress(0), i.show.play()
                     }
 
-                }), "projects").set([e.wrap, e.shades.wrap], {
+                }), "industries").set([e.wrap, e.shades.wrap], {
                     autoAlpha: 0
                 })
             },
