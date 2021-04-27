@@ -10,6 +10,26 @@
     <link rel="icon" href="favicon.ico" />
 
     <style>
+
+
+
+
+
+
+
+#containerr {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+  position: relative;
+}
+
+
+
+
+
+
+
         body,
         html,
         * {
@@ -191,7 +211,35 @@
 
 
                 <div class="ba-loader-shades" data-loader-shades></div>
-                <div class="ba-loader" data-loader></div>
+                <div class="ba-loader" data-loader>
+
+                    <center>
+                      
+                        <img src="assets/img/pred.gif" style="width: 100%;max-width: 80px;margin-top:18%;" />
+
+                
+                    
+                        <div style="position: absolute;width: 100%;bottom: 150px;">
+                            <div id="containerr">
+                                <span style="position: absolute;left: -26px;top: 1px;">0</span>
+                                <span style="position: absolute;left: 0%;top: 1px;" id="contprogres">0%</span>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    
+                    </center>
+                  
+                
+                </div>
 
                 <main id="fullpage">
 
@@ -253,8 +301,8 @@
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <strong style="font-size: 40px;">INDUSTRIES</strong>
-                                                        <span style="display: block;height: 319px;"></span>
+                                                        <strong style="font-size: 35px;">INDUSTRIES</strong>
+                                                        <span style="display: block;height: 325px;"></span>
                                             
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link">
@@ -425,7 +473,7 @@
                                     <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            TEXTIL
+                                            TEXTILE
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
@@ -503,6 +551,10 @@
     <script src="TweenMax.min.js"></script>
     <script src="ScrollToPlugin.min.js"></script>
     <script type='text/javascript' src='jquery-2.2.4.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js" integrity="sha512-7IoDEsIJGxz/gNyJY/0LRtS45wDSvPFXGPuC7Fo4YueWMNOmWKMAllEqo2Im3pgOjeEwsOoieyliRgdkZnY0ow==" crossorigin="anonymous"></script>
+
+    
     <script type='text/javascript' src='ScrollMagic.min.js'></script>
     <script type='text/javascript' src='animation.gsap.js'></script>
     <script type='text/javascript' src='thickbox.js?<?php echo rand(10, 99); ?>'></script>
@@ -523,9 +575,11 @@
         TweenMax.to('[data-loader-logo]', 0, {
             opacity: 1,
             onComplete: function() {
+
                 THREE.src = "three.min.js";
                 app.src = "app.js?<?php echo rand(10, 99); ?>";
                 document.body.appendChild(app);
+
             }
         })
 
@@ -541,6 +595,49 @@
                 }
             );
         });
+
+
+
+
+
+        
+var bar = new ProgressBar.Line(containerr, {
+  strokeWidth: 0.3,
+  easing: 'easeInOut',
+  duration: 5000,
+  color: '#fff',
+  trailColor: '#000',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  text: {
+    style: {
+      // Text color.
+      // Default: same as stroke color (options.color)
+      color: '#999',
+      position: 'absolute',
+      right: '0',
+      top: '30px',
+      padding: 0,
+      margin: 0,
+      transform: null
+    },
+    autoStyleContainer: false
+  },
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    var pro = Math.round(bar.value() * 100);
+    var oro = Math.round(bar.value() * 100 + 4) + '%';
+    document.getElementById("contprogres").style.left=oro;
+    $("#contprogres").html(pro);
+  }
+});
+bar.animate(1.0);
+
+
+
+
+
 
 
     </script>

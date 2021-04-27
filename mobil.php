@@ -168,7 +168,7 @@
 
                 <center>
                     <h2 class="ba-section-title" data-title style="font-size: 22px; margin:0px 30px;">
-                        INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
+                       INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
                     </h2><br><br>
                     <p style="font-size: 15px; margin:0px 30px;">We are a multi-subsidiary company with diversified participation in different business sectors. We execute all the relevant financing activities that our companies need.</p><br>
 
@@ -182,19 +182,12 @@
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-easing="ease-in-sine" onclick="abremodal(1)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-t ext">
-                                            TEXTIL
+                                            TEXTILE
                                         </span>
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine" onclick="abremodal(2)">
-                        <img class="ba-project__img" src="noenasmenu.svg">
-                        <span class="ba-extra-text">
-                                            TECH
-                                        </span>
-                        <span class="ba-project__line" data-line></span>
-                        <span class="ba-project__line-h" data-line-h></span>
-                    </li>
+
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="150" data-aos-easing="ease-in-sine" onclick="abremodal(3)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
@@ -203,6 +196,17 @@
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
+
+
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine" onclick="abremodal(2)">
+                        <img class="ba-project__img" src="noenasmenu.svg">
+                        <span class="ba-extra-text">
+                                          TECHNOLOGY
+                                        </span>
+                        <span class="ba-project__line" data-line></span>
+                        <span class="ba-project__line-h" data-line-h></span>
+                    </li>
+
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200" data-aos-easing="ease-in-sine" onclick="abremodal(4)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
@@ -247,7 +251,7 @@
                     <div class="row column">
 
                         <div class="ba-offcanvas-contacts text-right" style="float: right;">
-                            <p class="mb-3" style="font-weight: 700;font-size: 16px;">Headquarter</p>
+                            <p class="mb-3" style="font-weight: 700;font-size: 16px;">Headquarters</p>
                             <p style="margin-bottom: -6px;">20 des Souers Grises, Montreal,</p>
                             <p class="mb-3">Quebec, Canada, H3C 5M1</p>
                             <p class="mb-3">
@@ -287,21 +291,21 @@
         function abremodal(num){
 
             if(num==1){
-                $("#modtitle").html("TEXTILES");
-                $("#textitle").html("An innovative safety baby’s clothing manufacturer");
+                $("#modtitle").html("TEXTILE");
+                $("#textitle").html("A full-service provider of custom uniforms and apparel for corporate and law enforcement agencies.");
             }
             if(num==2){
-                $("#modtitle").html("TECH");
-                $("#textitle").html("An online end-to-end platform that brings accuracy, visibility and intelligence of quality and production data which predictive, identify, address hotspots and root cause of a failure");
+                $("#modtitle").html("TECHNOLOGY");
+                $("#textitle").html("An online end-to-end platform that generates data intelligence which predicts, identifies and addresses pain points and root causes of production and quality failures.");
             }
 
             if(num==3){
                 $("#modtitle").html("FOOD");
-                $("#textitle").html("A grower-partner, producer-partner, and supplier, specialises in a very wide range of high-quality Fresh vegetables and fruit products");
+                $("#textitle").html("A grower, producer and supplier specialized in a wide range of high-quality fresh produce.");
             }
             if(num==4){
                 $("#modtitle").html("REAL ESTATE");
-                $("#textitle").html("A real-estate developer, owner and operator, with a portfolio of high-end assets in worldwide prime locations");
+                $("#textitle").html("A developer, owner and operator of worldwide prime real estate locations.");
             }
 
             $("#exampleModal").modal("show");
