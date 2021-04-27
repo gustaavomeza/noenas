@@ -10,6 +10,26 @@
     <link rel="icon" href="favicon.ico" />
 
     <style>
+
+
+
+
+
+
+
+#containerr {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+  position: relative;
+}
+
+
+
+
+
+
+
         body,
         html,
         * {
@@ -178,7 +198,7 @@
                                     <a class="nav-link smoth-scroll" href="../">ENGLISH</a>
                                 </li>
                                 <li class="nav-item ido">
-                                    <a class="nav-link smoth-scroll active" href="#">FRANÇAIS</a>
+                                    <a class="nav-link smoth-scroll active" href="fr">FRANÇAIS</a>
                                 </li>
                             </ul>
                         </div>
@@ -191,7 +211,35 @@
 
 
                 <div class="ba-loader-shades" data-loader-shades></div>
-                <div class="ba-loader" data-loader></div>
+                <div class="ba-loader" data-loader>
+
+                    <center>
+                      
+                        <img src="assets/img/pred.gif" style="width: 100%;max-width: 80px;margin-top:18%;" />
+
+                
+                    
+                        <div style="position: absolute;width: 100%;bottom: 150px;">
+                            <div id="containerr">
+                                <span style="position: absolute;left: -26px;top: 1px;">0</span>
+                                <span style="position: absolute;left: 0%;top: 1px;" id="contprogres">0%</span>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    
+                    </center>
+                  
+                
+                </div>
 
                 <main id="fullpage">
 
@@ -205,19 +253,18 @@
                                     <div class="column medium-8 large-4 small-12 position-relative" data-box>
                                         <div data-box-content>
                                             <h2 class="ba-section-title" data-title style="font-size: 35px;">
-                                             
-                                              INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
+                                                INVESTIR DANS LES<br> CONSÉQUENCES NON <br>ÉCONOMIQUES DES <br>ACTIONS ÉCONOMIQUES
+                                              
                                             </h2>
                                             <div data-text>
-                                                <p style="font-size: 17px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing
-                                                    needs of our companies</p>
+                                                <p style="font-size: 17px;">Nous sommes une société composée de plusieurs filiales, avec une participation diversifiée dans différents secteurs d'activité. Nous avons la capacité de d'exécuter les activités de financement pertinentes dont nos entreprises ont besoin.</p>
 
-                                                    <p style="font-size: 17px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency to help create a society that protect and promotes quality of life and human dignity for all</p>
+                                                <p style="font-size: 17px;">Nos principes recteurs reposent sur des principes du Financement Éthique comme la transparence, la responsabilité et l'efficacité, afin de contribuer à créer une société qui protège et promeut la qualité de vie et la dignité humaine pour tous.</p>
 
                                             </div>
-                                            <a href="#projects" class="ba-extra-text ba-scroll-link">
+                                            <a href="#industries" class="ba-extra-text ba-scroll-link">
                                                 <span data-scroll>
-                                                   SCROLLER
+                                                      DÉROULER VERS LE BAS
                                                 </span>
                                             </a>
                                         </div>
@@ -238,8 +285,8 @@
 
 
                     <!--  LISTA MENU   -->
-                    <section class="section fp-section-projects" data-anchor="projects" data-section="projects">
-                        <div class="ba-section ba-section-projects">
+                    <section class="section fp-section-industries" data-anchor="industries" data-section="industries">
+                        <div class="ba-section ba-section-industries">
                             <div class="ba-section-body">
                                 <div class="row">
                                     <div class="column medium-12 large-6 small-12 position-relative" data-box>
@@ -248,19 +295,20 @@
 
 
 
-                                            <div class="ba-projects-slider show-for-large" data-projects-slider>
+                                            <div class="ba-industries-slider show-for-large" data-industries-slider>
 
 
                                                 <div>
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <p style="font-size: 17px;height: 350px;">An innovative safety baby’s clothing manufacturer</p>
+                                                        <strong style="font-size: 35px;">SECTEURS<span style="opacity:0">_</span>D’ACTIVITÉ</strong>
+                                                        <span style="display: block;height: 325px;"></span>
                                             
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link">
                                                         <span data-scroll>
-                                                           SCROLLER
+                                                              DÉROULER VERS LE BAS
                                                         </span>
                                                     </a>
                                                 </div>
@@ -269,12 +317,12 @@
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <p style="font-size: 17px;height: 350px;">An innovative safety baby’s clothing manufacturer</p>
+                                                        <p style="font-size: 17px;height: 350px;">Fournisseur des services intégraux pour la fabrication d'uniformes et de vêtements personnalisés pour les entreprises et les forces de l'ordre.</p>
                                                         
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
                                                         <span data-scroll>
-                                                           SCROLLER
+                                                              DÉROULER VERS LE BAS
                                                         </span>
                                                     </a>
                                                 </div>
@@ -284,12 +332,12 @@
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <p style="font-size: 17px;height: 350px;">An online end-to-end platform that brings accuracy, visibility and intelligence of quality and production data which predictive, identify, address hotspots and root cause of a failure</p>
+                                                        <p style="font-size: 17px;height: 350px;">Agriculteur, producteur et fournisseur d’une ample gamme de végétales frais de haute qualité.</p>
                                                        
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
                                                         <span data-scroll>
-                                                           SCROLLER
+                                                              DÉROULER VERS LE BAS
                                                         </span>
                                                     </a>
                                                 </div>
@@ -299,12 +347,12 @@
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <p style="font-size: 17px;height: 350px;">A grower-partner, producer-partner, and supplier, specialises in a very wide range of high-quality Fresh vegetables and fruit products</p>
+                                                        <p style="font-size: 17px;height: 350px;">Plateforme en ligne intégrale axée sur la génération de l’intelligence des données intelligentes qui permettre de prédire, d'identifier et de traiter rapidement les problèmes et leur cause d’origine dans des environnements de production et de l'assurance de la qualité.</p>
                                                    
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
                                                         <span data-scroll>
-                                                            SCROLLER
+                                                              DÉROULER VERS LE BAS
                                                         </span>
                                                     </a>
                                                 </div>
@@ -313,12 +361,12 @@
                                                     <h2 class="h1 ba-section-title nocolor" data-title>X_X</h2>
                                                     <div class="ba-section-text" data-text>
                                                         <span style="display: block;height: 150px;"></span>
-                                                        <p style="font-size: 17px;height: 350px;">A real-estate developer, owner and operator, with a portfolio of high-end assets in worldwide prime locations</p>
+                                                        <p style="font-size: 17px;height: 350px;">Promoteur, propriétaire et operateur de plusieurs propriétés situés dans d'emplacements de premier ordre dans les principales villes de la planète.</p>
                                                    
                                                     </div>
                                                     <a href="#contact" class="ba-extra-text ba-scroll-link" data-scroll>
                                                         <span data-scroll>
-                                                            SCROLLER
+                                                              DÉROULER VERS LE BAS
                                                         </span>
                                                     </a>
                                                 </div>
@@ -414,47 +462,47 @@
                     <div class="ba-loader-bg" data-loader-bg></div>
 
 
-                    <div class="ba-projects-bar ba-projects-bar--desk show-for-large">
-                        <div class="ba-projects-bar-wrap" data-projects-scroll-wrap>
-                            <div class="ba-projects-bar-wrap__fade ba-projects-bar-wrap__fade--top" data-projects-scroll-fade></div>
-                            <div data-projects-scroll-list>
-                                <ul class="ba-projects-list" data-projects-list>
+                    <div class="ba-industries-bar ba-industries-bar--desk show-for-large">
+                        <div class="ba-industries-bar-wrap" data-industries-scroll-wrap>
+                            <div class="ba-industries-bar-wrap__fade ba-industries-bar-wrap__fade--top" data-industries-scroll-fade></div>
+                            <div data-industries-scroll-list>
+                                <ul class="ba-industries-list" data-industries-list>
 
 
 
 
-                                    <li class="ba-project" data-projects-list-item>
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            TEXTILES
+                                            TEXTILE
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
 
 
-                                    <li class="ba-project" data-projects-list-item>
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            TECH
+                                         ALIMENTAIRE
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
 
                                     
-                                    <li class="ba-project" data-projects-list-item>
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            FOOD
+                                           TECHNOLOGIE
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
                                     </li>
-                                    <li class="ba-project" data-projects-list-item>
+                                    <li class="ba-project" data-industries-list-item>
                                         <img class="ba-project__img" src="noenasmenu.svg">
                                         <span class="ba-extra-text" data-project-list-title>
-                                            REAL ESTATE
+                                           IMMOBILIER
                                         </span>
                                         <span class="ba-project__line" data-line></span>
                                         <span class="ba-project__line-h" data-line-h></span>
@@ -465,7 +513,7 @@
                                 </ul>
 
                             </div>
-                            <div class="ba-projects-bar-wrap__fade ba-projects-bar-wrap__fade--bot" data-projects-scroll-fade></div>
+                            <div class="ba-industries-bar-wrap__fade ba-industries-bar-wrap__fade--bot" data-industries-scroll-fade></div>
                         </div>
                     </div>
                 </main>
@@ -504,6 +552,10 @@
     <script src="TweenMax.min.js"></script>
     <script src="ScrollToPlugin.min.js"></script>
     <script type='text/javascript' src='jquery-2.2.4.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js" integrity="sha512-7IoDEsIJGxz/gNyJY/0LRtS45wDSvPFXGPuC7Fo4YueWMNOmWKMAllEqo2Im3pgOjeEwsOoieyliRgdkZnY0ow==" crossorigin="anonymous"></script>
+
+    
     <script type='text/javascript' src='ScrollMagic.min.js'></script>
     <script type='text/javascript' src='animation.gsap.js'></script>
     <script type='text/javascript' src='thickbox.js?<?php echo rand(10, 99); ?>'></script>
@@ -524,9 +576,11 @@
         TweenMax.to('[data-loader-logo]', 0, {
             opacity: 1,
             onComplete: function() {
-                THREE.src = "three.min.js";
+
+                THREE.src = "three.min.js?<?php echo rand(10, 99); ?>";
                 app.src = "app.js?<?php echo rand(10, 99); ?>";
                 document.body.appendChild(app);
+
             }
         })
 
@@ -542,6 +596,49 @@
                 }
             );
         });
+
+
+
+
+
+        
+var bar = new ProgressBar.Line(containerr, {
+  strokeWidth: 0.3,
+  easing: 'easeInOut',
+  duration: 5000,
+  color: '#fff',
+  trailColor: '#000',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  text: {
+    style: {
+      // Text color.
+      // Default: same as stroke color (options.color)
+      color: '#999',
+      position: 'absolute',
+      right: '0',
+      top: '30px',
+      padding: 0,
+      margin: 0,
+      transform: null
+    },
+    autoStyleContainer: false
+  },
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    var pro = Math.round(bar.value() * 100);
+    var oro = Math.round(bar.value() * 100 + 4) + '%';
+    document.getElementById("contprogres").style.left=oro;
+    $("#contprogres").html(pro);
+  }
+});
+bar.animate(1.0);
+
+
+
+
+
 
 
     </script>

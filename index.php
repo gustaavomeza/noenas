@@ -576,7 +576,7 @@
             opacity: 1,
             onComplete: function() {
 
-                THREE.src = "three.min.js";
+                THREE.src = "three.min.js?<?php echo rand(10, 99); ?>";
                 app.src = "app.js?<?php echo rand(10, 99); ?>";
                 document.body.appendChild(app);
 

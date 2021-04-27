@@ -64,7 +64,7 @@
         }
 
 
-        .btng {
+.btng {
     background: #313131;
     margin: 0px !important;
     color: white;
@@ -152,10 +152,10 @@
                             </a>
                             <ul class="miidiomas">
                                 <li class="nav-item ido mr-2">
-                                    <a class="nav-link smoth-scroll" href="../mobil.php">ENGLISH</a>
+                                    <a class="nav-link smoth-scroll" href="../">ENGLISH</a>
                                 </li>
                                 <li class="nav-item ido">
-                                    <a class="nav-link smoth-scroll active" href="#">FRANÇAIS</a>
+                                    <a class="nav-link smoth-scroll active" href="fr">FRANÇAIS</a>
                                 </li>
                             </ul>
                         </div>
@@ -168,11 +168,11 @@
 
                 <center>
                     <h2 class="ba-section-title" data-title style="font-size: 22px; margin:0px 30px;">
-                        INVESTING INTO<br> NON-ECONOMIC<br> CONSEQUENCES OF<br> ECONOMIC ACTIONS
+                        INVESTIR DANS LES<br> CONSÉQUENCES NON <br>ÉCONOMIQUES DES <br>ACTIONS ÉCONOMIQUES
                     </h2><br><br>
-                    <p style="font-size: 15px; margin:0px 30px;">We are a corporation with a number of subsidiary<br>companies under its control, which<br>are diversified in different industries. We carry out all the equity financing activities to meet the equity financing needs of our companies</p><br>
+                    <p style="font-size: 15px; margin:0px 30px;">Nous sommes une société composée de plusieurs filiales, avec une participation diversifiée dans différents secteurs d'activité. Nous avons la capacité de d'exécuter les activités de financement pertinentes dont nos entreprises ont besoin.</p><br>
 
-                    <p style="font-size: 15px; margin:0px 30px;">We only focus on Ethical Finance principles such as Transparency, Sobriety, Accountability and Efficiency to help create a society that protect and promotes quality of life and human dignity for all</p>
+                    <p style="font-size: 15px; margin:0px 30px;">Nos principes recteurs reposent sur des principes du Financement Éthique comme la transparence, la responsabilité et l'efficacité, afin de contribuer à créer une société qui protège et promeut la qualité de vie et la dignité humaine pour tous.</p>
                 </center><br><br><br><br>
 
 
@@ -182,37 +182,43 @@
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-easing="ease-in-sine" onclick="abremodal(1)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-t ext">
-                                            TEXTILES
+                                            TEXTILE
                                         </span>
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
-                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine" onclick="abremodal(2)">
-                        <img class="ba-project__img" src="noenasmenu.svg">
-                        <span class="ba-extra-text">
-                                            TECH
-                                        </span>
-                        <span class="ba-project__line" data-line></span>
-                        <span class="ba-project__line-h" data-line-h></span>
-                    </li>
+
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="150" data-aos-easing="ease-in-sine" onclick="abremodal(3)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
-                                            FOOD
+                                            ALIMENTAIRE
                                         </span>
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
+
+
+                    <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="100" data-aos-easing="ease-in-sine" onclick="abremodal(2)">
+                        <img class="ba-project__img" src="noenasmenu.svg">
+                        <span class="ba-extra-text">
+                                          TECHNOLOGIE
+                                        </span>
+                        <span class="ba-project__line" data-line></span>
+                        <span class="ba-project__line-h" data-line-h></span>
+                    </li>
+
                     <li class="ba-project" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200" data-aos-easing="ease-in-sine" onclick="abremodal(4)">
                         <img class="ba-project__img" src="noenasmenu.svg">
                         <span class="ba-extra-text">
-                                            REAL ESTATE
+                                            IMMOBILIER
                                         </span>
                         <span class="ba-project__line" data-line></span>
                         <span class="ba-project__line-h" data-line-h></span>
                     </li>
 
                 </ul><br><br><br><br><br><br>
+
+                
                 
                 
                 <!-- Modal -->
@@ -235,6 +241,10 @@
                   </div>
                 </div>
                 
+
+
+
+
 
 
                 <div class="ba-section-body">
@@ -276,32 +286,32 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-    <script>
 
 
         function abremodal(num){
 
             if(num==1){
-                $("#modtitle").html("TEXTILES");
-                $("#textitle").html("An innovative safety baby’s clothing manufacturer");
+                $("#modtitle").html("TEXTILE");
+                $("#textitle").html("Fournisseur des services intégraux pour la fabrication d'uniformes et de vêtements personnalisés pour les entreprises et les forces de l'ordre.");
             }
-            if(num==2){
-                $("#modtitle").html("TECH");
-                $("#textitle").html("An online end-to-end platform that brings accuracy, visibility and intelligence of quality and production data which predictive, identify, address hotspots and root cause of a failure");
+            if(num==3){
+                $("#modtitle").html("ALIMENTAIRE");
+                $("#textitle").html("Agriculteur, producteur et fournisseur d’une ample gamme de végétales frais de haute qualité.");
             }
 
-            if(num==3){
-                $("#modtitle").html("FOOD");
-                $("#textitle").html("A grower-partner, producer-partner, and supplier, specialises in a very wide range of high-quality Fresh vegetables and fruit products");
+            if(num==2){
+                $("#modtitle").html("TECHNOLOGIE");
+                $("#textitle").html("Plateforme en ligne intégrale axée sur la génération de l’intelligence des données intelligentes qui permettre de prédire, d'identifier et de traiter rapidement les problèmes et leur cause d’origine dans des environnements de production et de l'assurance de la qualité.");
             }
             if(num==4){
-                $("#modtitle").html("REAL ESTATE");
-                $("#textitle").html("A real-estate developer, owner and operator, with a portfolio of high-end assets in worldwide prime locations");
+                $("#modtitle").html("IMMOBILIER");
+                $("#textitle").html("Promoteur, propriétaire et operateur de plusieurs propriétés situés dans d'emplacements de premier ordre dans les principales villes de la planète.");
             }
 
             $("#exampleModal").modal("show");
 
         }
+
         AOS.init();
 
         function irMapa() {

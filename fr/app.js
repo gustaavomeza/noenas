@@ -489,12 +489,12 @@
     ///////////////////APARECE CONTEIDO
 
 
-    var r, a, l, c, d, u, h, p, f, v, m, g, w, y, T, S, b, x = (r = animation_tl("1"), a = $("[data-for-people]"), l = $("[data-projects-slider]"), $("[data-founders-slider]"), c = $("[data-contact-slider]"), d = $("[data-projects-close]"), u = $("[data-projects-wrap]"), h = $("[data-projects-list]"), p = $("[data-projects-list-mob]"), f = h.find("[data-projects-list-item]"), v = p.find("[data-projects-list-item]"), m = $("[data-project-slide]"), g = $("[data-projects-scroll-list]"), w = $("[data-projects-scroll-wrap]"), y = $("[data-news-slider]"), $("#contact-inner"), T = function() {
+    var r, a, l, c, d, u, h, p, f, v, m, g, w, y, T, S, b, x = (r = animation_tl("1"), a = $("[data-for-people]"), l = $("[data-industries-slider]"), $("[data-founders-slider]"), c = $("[data-contact-slider]"), d = $("[data-industries-close]"), u = $("[data-industries-wrap]"), h = $("[data-industries-list]"), p = $("[data-industries-list-mob]"), f = h.find("[data-industries-list-item]"), v = p.find("[data-industries-list-item]"), m = $("[data-project-slide]"), g = $("[data-industries-scroll-list]"), w = $("[data-industries-scroll-wrap]"), y = $("[data-news-slider]"), $("#contact-inner"), T = function() {
             return $(document).width() < 640
         }, S = function() {
             return $(document).width() < 900 && $(document).width() >= 640
         }, b = {
-            moveProjects: function(e) {
+            moveindustries: function(e) {
                 var t = g.outerHeight() - (w.outerHeight() - 96),
                     i = t * o - 60,
                     o = (i = e.pageY - w[0].offsetTop) / w.outerHeight();
@@ -507,10 +507,10 @@
                 TweenMax.to(g, .6, {
                     y: 0,
                     ease: Power2.easeOut
-                }), w.off("mousemove.projectsSroll", this.moveProjects)
+                }), w.off("mousemove.industriesSroll", this.moveindustries)
             },
             on: function() {
-                w.on("mousemove.projectsSroll", this.moveProjects)
+                w.on("mousemove.industriesSroll", this.moveindustries)
             }
         }, {
             init: function() {
@@ -546,7 +546,7 @@
                             ease: Power2.easeOut
                         }, 0).set(e.aScroll.parent(), {
                             overflow: "visible"
-                        }), T() || S() || "home" != e.data("section") && "projects" != e.data("section") ? (t.hide.staggerTo(e.aTitle.lines, .7, {
+                        }), T() || S() || "home" != e.data("section") && "industries" != e.data("section") ? (t.hide.staggerTo(e.aTitle.lines, .7, {
                             yPercent: -100,
                             opacity: 0,
                             ease: Power2.easeIn
@@ -574,7 +574,7 @@
                         }, "moveBox-=0.45").to(e.aLine, .4, {
                             scaleY: 0,
                             transformOrigin: "50% 0%"
-                        }, "-=0.05"), "projects" == e.data("section")) {
+                        }, "-=0.05"), "industries" == e.data("section")) {
                         m.each((function() {
                             var e = $(this),
                                 t = {
@@ -607,27 +607,27 @@
                                 paused: !0
                             })
                         };
-                        o.show.add("projects", 0).staggerTo(p.find("[data-projects-list-item]"), .8, {
+                        o.show.add("industries", 0).staggerTo(p.find("[data-industries-list-item]"), .8, {
                             xPercent: -100,
                             ease: Power3.easeInOut,
                             force3D: !0
-                        }, .1, "projects").staggerTo(p.find("[data-line-h]"), .4, {
+                        }, .1, "industries").staggerTo(p.find("[data-line-h]"), .4, {
                             scaleX: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects").staggerTo(p.find("[data-line]"), .5, {
+                        }, .1, "industries").staggerTo(p.find("[data-line]"), .5, {
                             scale: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.55").staggerFrom(p.find("[data-project-list-title]"), .3, {
+                        }, .1, "industries+=0.55").staggerFrom(p.find("[data-project-list-title]"), .3, {
                             y: -5,
                             opacity: 0,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.8"), o.hide.staggerTo(p.find("[data-line]"), .6, {
+                        }, .1, "industries+=0.8"), o.hide.staggerTo(p.find("[data-line]"), .6, {
                             scale: 0,
                             ease: Power3.easeIn
                         }, 0).to(p.find("[data-project-list-title]"), .6, {
                             opacity: 0,
                             ease: Power3.easeIn
-                        }, 0).to(p.find("[data-projects-list-item]"), .8, {
+                        }, 0).to(p.find("[data-industries-list-item]"), .8, {
                             transform: "translateX(0)",
                             ease: Power3.easeInOut,
                             clearProps: "all"
@@ -643,20 +643,20 @@
                                 paused: !0
                             })
                         };
-                        n.show.add("projects", 0).staggerTo(f, .8, {
+                        n.show.add("industries", 0).staggerTo(f, .8, {
                             xPercent: -35,
                             ease: Power3.easeInOut
-                        }, .1, "projects").staggerTo(h.find("[data-line-h]"), .4, {
+                        }, .1, "industries").staggerTo(h.find("[data-line-h]"), .4, {
                             scaleX: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects").staggerTo(h.find("[data-line]"), .5, {
+                        }, .1, "industries").staggerTo(h.find("[data-line]"), .5, {
                             scale: 1,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.55").staggerFrom(h.find("[data-project-list-title]"), .3, {
+                        }, .1, "industries+=0.55").staggerFrom(h.find("[data-project-list-title]"), .3, {
                             y: -5,
                             opacity: 0,
                             ease: Power3.easeOut
-                        }, .1, "projects+=0.8"), n.hide.staggerTo(h.find("[data-line]"), .6, {
+                        }, .1, "industries+=0.8"), n.hide.staggerTo(h.find("[data-line]"), .6, {
                             scale: 0,
                             ease: Power3.easeIn
                         }, 0).to(h.find("[data-project-list-title]"), .6, {
@@ -677,7 +677,7 @@
                             fullpage_api.setAllowScrolling(!0), b.on()
                         })), n.hide.eventCallback("onComplete", (function() {
                             fullpage_api.setAllowScrolling(!0)
-                        })), e.data("projectsTl", n)
+                        })), e.data("industriesTl", n)
                     }
                     e.data("show", t.show), e.data("hide", t.hide)
                 })), new o.default("#fullpage", {
@@ -685,7 +685,7 @@
                     autoScrolling: !0,
                     menu: "#menu-main-menu",
                     navigation: !1,
-                    anchors: ["home", "projects", "contact"],
+                    anchors: ["home", "industries", "contact"],
                     scrollingSpeed: 1500,
                     scrollOverflow: !0,
                     scrollOverflowReset: !1,
@@ -722,14 +722,14 @@
                                 })), o.show && (o.show.progress(1, !0), o.show.reverse())
                         }
 
-                        if ("projects" == t.anchor && !window.isLoading) {
-                            var s = $(t.item).data("projectsTl");
+                        if ("industries" == t.anchor && !window.isLoading) {
+                            var s = $(t.item).data("industriesTl");
                             s.show.progress(0), s.show.play(), TweenMax.to(".fp-scroller", .2, {
                                 y: 0
                             })
                         }
-                        if ("projects" == e.anchor && !window.isLoading) {
-                            var c = $(e.item).data("projectsTl");
+                        if ("industries" == e.anchor && !window.isLoading) {
+                            var c = $(e.item).data("industriesTl");
                             c.hide.progress(0), c.hide.play()
                         }
                         var d = "contact" != t.anchor;
@@ -815,22 +815,22 @@
                 })), l.on("afterChange", (function(e, t, i) {
                     var o = m.eq(i - 1).data("show");
                     o && o.play()
-                })), f.hover(function() {
+                })), f.click(function() {
 
                     //console.log("ES CAMBIA TEXTO");
 
                     var e = $(this),
                         t = f.index(e);
-                    "projects" == fullpage_api.getActiveSection().anchor ? (f.removeClass("active"), e.addClass("active"), l.slick("slickGoTo", t + 1)) : l.slick("slickGoTo", 0)
+                    "industries" == fullpage_api.getActiveSection().anchor ? (f.removeClass("active"), e.addClass("active"), l.slick("slickGoTo", t + 1)) : l.slick("slickGoTo", 0)
                 }), d.on("click", (function() {
 
                     //console.log(1);
                     u.removeClass("open"), fullpage_api.setAllowScrolling(!0)
                 })), h.click(function() {
 
-                    //console.log("slider projects");
+                    //console.log("slider industries");
 
-                    fullpage_api.moveTo("projects")
+                    fullpage_api.moveTo("industries")
                 })
             },
             play: function() {}
@@ -5519,7 +5519,7 @@
 
 
     var o = function() {
-        $("[data-projects-list]"), $("[data-projects-list-item]");
+        $("[data-industries-list]"), $("[data-industries-list-item]");
         var e = {
                 logo: $("[data-loader-logo]"),
                 wrap: $("[data-loader]"),
@@ -5546,7 +5546,7 @@
         return {
             init: function() {
                 window.isLoading = !0, fullpage_api.setAllowScrolling(!1), t.eventCallback("onComplete", (function() {
-                    "projects" != fullpage_api.getActiveSection().anchor && fullpage_api.setAllowScrolling(!0), window.isLoading = !1
+                    "industries" != fullpage_api.getActiveSection().anchor && fullpage_api.setAllowScrolling(!0), window.isLoading = !1
                 })), t.to(e.logo, 0, {
                     scaleY: 0
                 }).add("loaderParts").to(e.part.top, .6, {
@@ -5572,7 +5572,7 @@
                     transformOrigin: "50% 100%"
                 }, .1, "-=0.4").to(e.bg, .5, {
                     autoAlpha: 0
-                }).add("projects", "-=0.5").add((function() {
+                }).add("industries", "-=0.5").add((function() {
 
 
                     var e = $("[data-offcanvas-menu]");
@@ -5581,12 +5581,12 @@
                         e.append(i)
                     }), "text"), $(".section.active").data("show").play();
                     var t = fullpage_api.getActiveSection();
-                    if ("projects" == t.anchor) {
-                        var i = $(t.item).data("projectsTl");
+                    if ("industries" == t.anchor) {
+                        var i = $(t.item).data("industriesTl");
                         i.show.progress(0), i.show.play()
                     }
 
-                }), "projects").set([e.wrap, e.shades.wrap], {
+                }), "industries").set([e.wrap, e.shades.wrap], {
                     autoAlpha: 0
                 })
             },
